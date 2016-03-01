@@ -8,7 +8,7 @@ Here's what we're going to implement this time:
 
 - We're going to beautify ALL of our forms.  This includes:  registration, sign up, post creation, post editing.  Why?  Because we can do better dammit.
 - We're going to paginate our main news feed so our server doesn't explode with new visitor to the feed.
-- We're going to limit how many comments are shown on an individual post, before we expand them with a 'view all comments' link.  This is similar to how Instagram handles it and I'm in too deep with plagarism to change now.
+- We're going to limit how many comments are shown on an individual post, before we expand them with a 'view all comments' link.  This is similar to how Instagram handles it and I'm in too deep with plagiarism to change now.
 
 Now that you're primed for an incredible learning experience, let's get into it.  Brace yourself.
 
@@ -73,7 +73,7 @@ Just a simple HAML'd version of the standard Devise register view.  The below im
 
  ![Photogram Signup - new](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Signup - new.png)
 
-Using the [boostrap documentation for forms](http://getbootstrap.com/css/#forms) and the screenshot above, try to implement the new styling yourself.  If you need some extra tips, think of it like this.  You're going to need to add the background image somehow, and you're going to need to create the area for the form.  I may have used Bootstrap's inbuilt [panels](http://getbootstrap.com/components/#panels) for basic layout too...
+Using the [Bootstrap documentation for forms](http://getbootstrap.com/css/#forms) and the screenshot above, try to implement the new styling yourself.  If you need some extra tips, think of it like this.  You're going to need to add the background image somehow, and you're going to need to create the area for the form.  I may have used Bootstrap's inbuilt [panels](http://getbootstrap.com/components/#panels) for basic layout too...
 
 Oh yeah, don't forget that the view for our registration form can be found at ```app/views/devise/registrations/new.html.haml```.
 
@@ -226,7 +226,7 @@ Look good?  You bet your ass it does.  Now, onto...
 
 ##Pretty Post Posting & Previews
 
-Our old form looks a bit yuck and we don't get to preview our images either!  It's just not right.  let's shake things up a bit so our form actually looks OK, and we can have a quick glimpse at our image before we post, just in case we were to accidentally upoad a picture of our glutes again...
+Our old form looks a bit yuck and we don't get to preview our images either!  It's just not right.  let's shake things up a bit so our form actually looks OK, and we can have a quick glimpse at our image before we post, just in case we were to accidentally upload a picture of our glutes again...
 
 This is what the new form looks like again, for reference:
 
@@ -297,7 +297,7 @@ Here's some extra styling you can add to your ```application.scss``` file too:
 
 ___
 
-So let's say you ran with my idea regarding the new posts form, do me a favour now and edit one of your existing posts. Change the image and see what happens...
+So let's say you ran with my idea regarding the new posts form, do me a favor now and edit one of your existing posts. Change the image and see what happens...
 
 Yep, we're duplicating the image preview in the edit view and it's not being friendly with our new javascript preview feature.  Let's fix that now.
 
@@ -309,7 +309,7 @@ So we're duplicating the display of our images... Wouldn't it be great if the de
 
 Do your best to fix this issue now.  I'll give you a hint, I used a helper to move the logic out of my view.  The helper method uses a simple if / else statement to determine whether the post at hand has an existing image or not.  If it does, display that image, otherwise, display the placeholder image.
 
-It's your turn to take the reigns.
+It's your turn to take the reins.
 
 ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
 
@@ -363,7 +363,7 @@ ___
 
 ### Success!
 
-Congratulations. You now have great looking forms for the marjority of your application!  Combine that with a image preview for your new and edited posts, you're truly winning. Not only will this save you the embarrassment of revealing your junk to your siblings, it also provdes for a great user experience.
+Congratulations. You now have great looking forms for the majority of your application!  Combine that with a image preview for your new and edited posts, you're truly winning. Not only will this save you the embarrassment of revealing your junk to your siblings, it also provides for a great user experience.
 
 There's something else I'd like to attack in this article, and it also has to do with user experience.  User experience and preventing our server from imploding...
 
@@ -375,7 +375,7 @@ Yes.  We're going to paginate everything you can dream of.  Luckily for me, you 
 
 Why paginate?  Well consider our application for the moment.  Every.single.post and every.single.comment is being called on our index.  In our posts controller, our ```@posts``` instance variable is set to ```Post.all``` after all.
 
-**It's giving us litererally everything.**
+**It's giving us literally everything.**
 
 And that's ok... until it isn't.  It's ok on my development server because I have half a dozen posts.  It's not ok in production when we have many, many more posts.  The same is true for our comments.  Looking at our ```_post.html.haml``` partial, we can see that we're simply iterating through *every single* comment that exists on a post and displaying them all.
 
@@ -448,7 +448,7 @@ If you jump back into your index again, you should be able to click around on th
 
 We've rumbled in the AJAX jungle back in [Part 2](http://www.devwalks.com/lets-build-instagram-with-rails-like-me-and-tell-me-im-beautiful/) of this guide, when we created and deleted new comments for posts via AJAX calls and used some jQuery magic to adjust the DOM appropriately.  Let's do something similar now so that we don't need a full page refresh when we request more posts.
 
-Give it a go yourself first though.  Just a simple google search for 'kaminari ajax' will give you plenty of guides and stackoverflow questions to look at.  We want our functionality to work like so:
+Give it a go yourself first though.  Just a simple Google search for 'kaminari ajax' will give you plenty of guides and stackoverflow questions to look at.  We want our functionality to work like so:
 
 - Click on a LOAD MORE button at the bottom of the page and then *append* the next 'page' of posts below an id or class used to contain the existing posts.
 
@@ -467,7 +467,7 @@ Here's how I implemented this feature, manual clicking style.  First, I slightly
   = link_to_next_page @posts, 'LOAD MORE', remote: true, id: 'load_more'
 ```
 
-Differnces?  We'll I've got a new div with the 'posts' id.  Also, instead of iterating through each post at this point, I'm rendering a new partial called 'posts'.  Lastly, I've added ```remote: true``` and an id to the link\_to\_next\_page paginator, as well as a div above that with the id 'paginator'.  The added divs are all for the sake of either jQuery or styling our new button.
+Differences?  We'll I've got a new div with the 'posts' id.  Also, instead of iterating through each post at this point, I'm rendering a new partial called 'posts'.  Lastly, I've added ```remote: true``` and an id to the link\_to\_next\_page paginator, as well as a div above that with the id 'paginator'.  The added divs are all for the sake of either jQuery or styling our new button.
 
 Speaking of styling, below is the the additional lines in my ```application.scss``` file.  Just add them to the bottom of your existing code.
 
@@ -508,7 +508,7 @@ Our index is now rendering a ```views/posts/_posts.html.haml``` partial, which s
   = render 'post', post: post
 ```
 
-It's simply the block that iterates through each post in the ```@posts``` collection, rendering the ```_post.html.haml``` partial for each itme.  Why do this? Well, it's for the sake of our AJAX & jQuery magic, something that I'll run through in a moment.
+It's simply the block that iterates through each post in the ```@posts``` collection, rendering the ```_post.html.haml``` partial for each item.  Why do this? Well, it's for the sake of our AJAX & jQuery magic, something that I'll run through in a moment.
 
 Finally, I'd like to show you a new file called ```index.js.erb```.
 
@@ -528,7 +528,7 @@ In the second line, we select the ```#paginator``` div and set it's contents to 
 
 In the third line, we remove the ```#paginator``` div if the ```#load_more``` element (our link) doesn't exist.  This is purely to remediate some styling quirks that I was seeing once I'd run out of posts to paginate.  Feel free to remove that line and experiment for yourself.
 
-I'll mention a little quirk I found in my application that you may not experience.  At one point when implementing the above funcitonality, Rails was complaining that there was no ```user_name``` method for Nil when referring to ```comment.user.user_name``` in the ```_comments.html.haml``` partial.  If you run into this error, add a conditional above that line, something like below:
+I'll mention a little quirk I found in my application that you may not experience.  At one point when implementing the above functionality, Rails was complaining that there was no ```user_name``` method for Nil when referring to ```comment.user.user_name``` in the ```_comments.html.haml``` partial.  If you run into this error, add a conditional above that line, something like below:
 
 ```ruby
 .user-name
@@ -541,7 +541,7 @@ This no longer occurred once I built out some more features I'll talk about belo
 
 ___
 
-Refresh your browser and be amazed wiht our new functionality.  You scroll down, click the 'LOAD MORE' link (which looks kinda similar to Instagrams...) and you're then presented with some brand new posts!
+Refresh your browser and be amazed with our new functionality.  You scroll down, click the 'LOAD MORE' link (which looks kinda similar to Instagram's...) and you're then presented with some brand new posts!
 
 Great stuff.
 
@@ -610,7 +610,7 @@ $( document ).ready(function() {
 });
 ```
 
-I'm going to humour you and run through this line by line.  If you don't need me to, just skip the dot points below and bask in your smugness.
+I'm going to humor you and run through this line by line.  If you don't need me to, just skip the dot points below and bask in your smugness.
 
 1. Wait for the document to be ready before running the code.
 2. Listen for a click event on the ```.more-comments``` classes (each of our 'view all x comments' links).
@@ -661,7 +661,7 @@ This should be familiar as it remains unchanged from what we built in [Part 2 of
 
 Now that it seems like it's all working and I even used the term 'last piece of the puzzle'... it's *still* not quite right.
 
-**There's another last peice to the puzzle and I LIED!**
+**There's another last piece to the puzzle and I LIED!**
 
 If you've been following along up until now, I want you to do something.  Click some 'view x more comments' on a few of your index posts and ensure that it works.  Now, click on an individual post and attempt it there.
 
@@ -691,7 +691,7 @@ The above process seems complex for what seemed initially to be a simple feature
 
 **Click a link with remote: true that expects html to be returned** -> **Use jQuery to pick up on that click and add the retrieved data to a specific point on the page**
 
-We just needed to add our extra partial and some dyanamic id's and data-attributes to make this simple flow work correctly!
+We just needed to add our extra partial and some dynamic id's and data-attributes to make this simple flow work correctly!
 
 
 

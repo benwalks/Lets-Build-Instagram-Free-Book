@@ -38,7 +38,7 @@ rails new Photogram
 ___
 
 
-Now cd to your new directory in the termianl and let’s run the server to see if we’ve got rails working properly.
+Now cd to your new directory in the terminal and let’s run the server to see if we’ve got rails working properly.
 
  ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
 
@@ -500,7 +500,7 @@ Refresh your index page and bask in the glory that is your photo feed.
 
 *But it still doesn’t look like the Instagram feed…*
 
-Let’s change that now.  First let’s add our own classes to the html on our index view.  This section won’t be hidden because it’s kind of hard to implement this yourself.  If you want the challenge or have the CSS / HTML ability to do so, please do so now.  Simply steal Instagrams styling cues and plop them in your application.css and index.html.haml / .erb files!
+Let’s change that now.  First let’s add our own classes to the html on our index view.  This section won’t be hidden because it’s kind of hard to implement this yourself.  If you want the challenge or have the CSS / HTML ability to do so, please do so now.  Simply steal Instagram's styling cues and plop them in your application.css and index.html.haml / .erb files!
 
 My implementation looks like this in my index view:
 ```language-ruby
@@ -650,7 +650,7 @@ ____
 
 Now let's fiddle with the image\_tag on our index view so that each image will link to the appropriate post!
 
-Combining image\_tag and link_to tags will be commonplace in your rails career, work out how to do it via google searches before cheating below.
+Combining image\_tag and link_to tags will be commonplace in your rails career, work out how to do it via Google searches before cheating below.
 
 ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
 ___
@@ -857,7 +857,7 @@ Go ahead and create the set_post private method now.
 
 ------
 
-I wanna check yours...
+I want to check yours...
 
 Well, here's an overview of my PostsController so far.
 
@@ -980,7 +980,7 @@ Also, when our users create a new post, edit a post or delete a post, they’re 
 
 Start from the top action in your controller and work your way down, ask yourself if the user should be told something once that specific action is complete.  Create the flash message using the following code and insert it just prior to the redirect or render.  If using the render method, adjust the flash message to ```flash.now```:
 ```language-ruby
-flash[:success] = “Your personalised message here”
+flash[:success] = “Your personalized message here”
 ```
 If there’s a failure scenario, adjust slightly to this:
 ```language-ruby
