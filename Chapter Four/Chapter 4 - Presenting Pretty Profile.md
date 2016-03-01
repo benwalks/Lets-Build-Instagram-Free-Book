@@ -66,7 +66,7 @@ get ':user_name', to: 'profiles#show', as: :profile
 
 Want to read what's going on here?
 
-- We're going to GET (rather than POST or PATCH etc) our user name path.  Why are we using a symbol?  Well, that let's us use a dynamic parameter for the sake of our route.  If we just wrote ```get 'user_name'```, our route would be fixed as 'photogram.com/user_name'.  BUT with our current setup, we can pass user names as the param and get all dynamic and snazzy.
+- We're going to GET (rather than POST or PATCH etc.) our user name path.  Why are we using a symbol?  Well, that let's us use a dynamic parameter for the sake of our route.  If we just wrote ```get 'user_name'```, our route would be fixed as 'photogram.com/user_name'.  BUT with our current setup, we can pass user names as the param and get all dynamic and snazzy.
 - We're going to get the details for what to do with this route from the 'profiles' controller and the 'show' action.  We don't have a profiles controller yet, so we'll have to take care of that.
 - The ```as: :profile``` line let's us use handy Rails routing helpers in our code.  This will let us user the ```profile_path``` helper (just as we've used ```post_path``` or ```posts_path``` previously).
 
@@ -273,7 +273,7 @@ So we have an action in our controller with an instance variable pointing to the
 
 We’ll tackle the avatars first.
 
-So far in our Instagram build, we’ve used the fantastic Paperclip gem to handle our file uploads (images in this case), and we’ll keep utilising it for our avatars now.
+So far in our Instagram build, we’ve used the fantastic Paperclip gem to handle our file uploads (images in this case), and we’ll keep utilizing it for our avatars now.
 
 Checkout the great docs [over at github](https://github.com/thoughtbot/paperclip) and implement it for yourself!  Take particular notice of the ['Models'](https://github.com/thoughtbot/paperclip#models) and ['Migrations'](https://github.com/thoughtbot/paperclip#migrations) sections.
 
@@ -298,7 +298,7 @@ That should be it for the moment (until I migrate the changes to my DB).  Let’
 
 **Here’s your challenge, should you choose to accept it.**
 
-Add a new text column to the users table that we'l use for our bios.  Call it 'bio'.
+Add a new text column to the users table that we'll use for our bios.  Call it 'bio'.
 
 Do it all by yourself.
 
@@ -410,7 +410,7 @@ Let’s go through our update action one line at a time, if you know what’s go
 
 What have we achieved here?  Our users can now create and edit their profile data!  Even if you didn’t skip the dot points, give yourself a pat on the back now and kiss the closest human being (with permission) to celebrate this wonderful moment.
 
-## But Ben, I still can’t see everyones avatar or bio!
+## But Ben, I still can’t see everyone's avatar or bio!
 
 Oh yeah, let’s fix that now by being clever!
 
@@ -418,7 +418,7 @@ You should do it yourself of course, but first, let's think about what we want t
 
 The users active record object is already available with the ```@user``` instance variable that we’ve already set.  All we want is to access the ```@user.avatar``` and ```@user.bio```.  At the very least, add the data to your profile pages and we’ll beautify it in a moment.
 
-Remember, you’ll learn FAR more by doing it yourself, the struggle is key.  Don’t disappoint goat, he’s very judgemental.
+Remember, you’ll learn FAR more by doing it yourself, the struggle is key.  Don’t disappoint goat, he’s very judgmental.
 
 ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
 
