@@ -23,7 +23,7 @@ Sound good?  Of course it does! Let’s get going.  Oh yeah, it'll look like thi
 
 Let's start this part of the journey with... users!
 
-## Devise: You want to give yourself a baddass user name, I understand.
+## Devise: You want to give yourself a badass user name, I understand.
 
 Of course you do!  I do too...  In fact, who doesn’t want the ability to give your interactions *personality* within this anonymous pit that is the web?
 
@@ -101,7 +101,7 @@ Oh yeah, last but certainly not least, let’s copy those Devise views as mentio
 rails g devise:views
 ```
 
-Now we can easily access the Devise views for things such as new registrations, logins, password reminders etc etc with ease!  We will want to change these at a later point in order to make it match the rest of our application’s styling.
+Now we can easily access the Devise views for things such as new registrations, logins, password reminders, etc. with ease!  We will want to change these at a later point in order to make it match the rest of our application’s styling.
 
 ___
 
@@ -360,7 +360,7 @@ It isn’t going to happen.  Cool huh?
 
 Yes I’m throwing a tantrum and no I don’t care.  How can I show the world how amazing my life is via photos if people don’t know it’s MY photos they’re looking at??!?! 
 
-It’s time to personalise our posts.
+It’s time to personalize our posts.
 
 Let’s think about the relationship that our users will have with the posts.  You’ve dealt with relational databases before, how will this work?
 
@@ -1018,7 +1018,7 @@ Every time I write a message, I can’t help but think one thing...
 
 > This feels nothing like Instagram.
 
-And for good reason!  It’s not!  When I comment on someones post on Instagram, it’s beautiful!  I simply write my scathing personal criticism in the comment box and then it appears magically on the post.  The page  doesn’t refresh and I’m not taken to the top of the page!  
+And for good reason!  It’s not!  When I comment on someone's post on Instagram, it’s beautiful!  I simply write my scathing personal criticism in the comment box and then it appears magically on the post.  The page  doesn’t refresh and I’m not taken to the top of the page!  
 
 You know what? Let’s do that too.  Let’s make our comments feel magic.
 
@@ -1192,7 +1192,7 @@ $('#comment_content_<%= @post.id %>').val('')
 
 What exactly are we doing here?  We’re selecting the ```comments_(specific id)``` div and appending the comment partial to begin with.  After that, we select the ```comment_content_(specific id)``` div and change it’s value to an empty string.
 
-What’s that doing in actual english?
+What’s that doing in actual English?
 
 - Adding our newly added comment to the list of comments.
 - Clearing out the form that we just typed in.
@@ -1254,7 +1254,7 @@ And last but not least..
 
 
 
-**Finalise with some lovely jQuery**
+**Finalize with some lovely jQuery**
 
 Our jQuery should make sense after seeing the comment create feature in action.  We’re simply appending our updated comments list to the comment div!
 
