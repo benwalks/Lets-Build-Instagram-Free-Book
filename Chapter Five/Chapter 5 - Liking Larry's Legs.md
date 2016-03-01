@@ -6,7 +6,7 @@ Larry has a spectacular set of pins, check them out:
 
  ![Larrys Legs](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Five/Larrys Legs.png)
 
-Larry needs a feature on his favourite social network (Photogram) where he can accumulate likes for his posts, so he can bask in the glory of sharing his lovely legs with the world. And in this Rails tutorial, we’re going to give it to him.
+Larry needs a feature on his favorite social network (Photogram) where he can accumulate likes for his posts, so he can bask in the glory of sharing his lovely legs with the world. And in this Rails tutorial, we’re going to give it to him.
 
 
 
@@ -242,7 +242,7 @@ module PostsHelper
 end
 ```
 
-Quite a lot to take in right?  Well, heres that same code again but with some added comments in order for you to make sense of it all:
+Quite a lot to take in right?  Well, here's that same code again but with some added comments in order for you to make sense of it all:
 
 ```ruby
 module PostsHelper
@@ -668,7 +668,7 @@ When there’s lots of likes, just list the like count:
 
 We’ll do the same.  At the moment, we’re listing out the names with our helper methods BUT we’re also listing the names to infinity, meaning that the names will continue forever, making our application look ridiculous.  Let’s fix it.
 
-First, let’s display a like count for a post if it has more than 8 seperate likes.  First though, try it yourself!  Think about it like this, for the sake of your helper methods:
+First, let’s display a like count for a post if it has more than 8 separate likes.  First though, try it yourself!  Think about it like this, for the sake of your helper methods:
 
 1. Your view calls a ```display_likes``` helper method (yet this is a different name than we used in step one).
 2. If the post has less than or equal to 8 likes, call our previous ```list_likers``` method.
@@ -755,14 +755,14 @@ Update your ```app/views/posts/_likes.html.haml``` view as per below:
   = display_likes post
 ```
 
-Remember, all this does is give us a *very specific location* for javascript to do it’s thang.  Each ```post.id``` is unique, so we know that jQuery will always be looking at the right post when it updates.
+Remember, all this does is give us a *very specific location* for javascript to do it’s thing.  Each ```post.id``` is unique, so we know that jQuery will always be looking at the right post when it updates.
 
 Now, in the jQuery above, all we’re doing is this:
 
 - Finding the appropriate post 'likes' id element.
 - Changing the html of that element to the rendered ```_likes.html.haml``` partial WITH the new information it’ll have from our AJAX call.
 
-To summarise: Our user-name will be added to the list!
+To summarize: Our user-name will be added to the list!
 
 Now, this isn’t an ideal solution for this problem for one simple reason:  We’re making extra calls to the server every time we like a post (or dislike a post).  How else could we achieve the same effect?
 
@@ -789,7 +789,7 @@ And that’s it.  Some simple steps to making a brand new ```unlike``` feature. 
 
 ## Hearts are Red
 
-Now lets very simply style our little heart so that it looks a little nicer for our users (they’re very picky).  At the moment, our heart is the default blue colour found in our app for all links, and we also get an ugly little underline on the heart when hovering with our mouse.
+Now lets very simply style our little heart so that it looks a little nicer for our users (they’re very picky).  At the moment, our heart is the default blue color found in our app for all links, and we also get an ugly little underline on the heart when hovering with our mouse.
 
 Jump on into your ```app/assets/stylesheets/application.scss``` file and add the following code to the bottom:
 
