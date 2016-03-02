@@ -168,28 +168,28 @@ Make sure you've saved the above relationships in your ```User``` model and then
 *The below assumes you have users with the id of 1, 2 and 3.  If you don't, just use what you have. You may have to create some new users, either manually or in the console.*
 
 ```ruby
-# create a new follow relationship where the user 
-# with the id of 1 follows the user with the id of 2 
+# create a new follow relationship where the user
+# with the id of 1 follows the user with the id of 2
 Follow.create(follower_id: 1, following_id: 2)
 # create another for good measure with a different user
 Follow.create(follower_id: 1, following_id: 3)
-# Now, let's create a relationship where the user with 
-# the id of 1 is being followed by a user with the 
+# Now, let's create a relationship where the user with
+# the id of 1 is being followed by a user with the
 # id of 3
 Follow.create(follower_id: 3, following_id: 1)
-# Now, let's see how our relationships work.  First, 
+# Now, let's see how our relationships work.  First,
 # find the user who we created relationships for.
 u = User.find 1
 # List this user's followers
 u.followers
 # List the users this user is following
 u.following
-# calling follower_relationships on the user will list 
+# calling follower_relationships on the user will list
 # the relationships we've created in the follows table
 # where the user is being followed by other users
 u.follower_relationships
 # calling following_relationships on the user will list
-# the relationships we've created in the follows table 
+# the relationships we've created in the follows table
 # where the user is following other users
 u.following_relationships
 ```
@@ -392,6 +392,18 @@ Last but not least, let's add some logic to our profile view in ```app/views/pro
                         method: :post
 ```
 
+
+You'll notice the ```current_user_is_following``` helper method in the view above.  Here's how that could look in your ```profiles_helper.rb``` file:
+
+```ruby
+module ProfilesHelper
+  def current_user_is_following(current_user_id, followed_user_id)
+    relationship = Follow.find_by(follower_id: current_user_id, following_id: followed_user_id)
+    return true if relationship
+  end
+end
+```
+
 As of now, you should have a completely functional Follow / Unfollow button that correctly creates and destroys relationships in our application!
 
 Congrats!  If I was there in that room with you I'd give you a high five, followed promptly by a cuddle, followed promptly by our secret handshake.  I love our handshake, especially that little flair at the end.
@@ -442,7 +454,7 @@ What we'll do to finish this guide is to make sure that our wonderful users can 
 
 All we'll do is create a new action in our post controller called ```browse```, create a new associated view, and update our navbar to have a link to the browse view.
 
-Go on, give it a go yourself!  Here's a hint, this functionality is EXACTLY what we were doing before!  The only difference is that you're creating a new controller action and a new view. 
+Go on, give it a go yourself!  Here's a hint, this functionality is EXACTLY what we were doing before!  The only difference is that you're creating a new controller action and a new view.
 
 Here's one more hint:
 
@@ -538,4 +550,3 @@ There are a few features that would be lovely to have as part of photogram at th
 - I'd love for my own posts to be shown on my dashboard too. How could I achieve that?
 
 That should be enough for the moment.  Once you've done those couple of things, you'll have a pretty well rounded social network on your hands!
-
