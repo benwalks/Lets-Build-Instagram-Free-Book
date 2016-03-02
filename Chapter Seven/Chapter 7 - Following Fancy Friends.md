@@ -33,7 +33,7 @@ At the moment, our user's profiles look like this:
 
 We can't actually follow or unfollow a user from here, all we can do is gaze upon their wonderful selfies.
 
-Where the 'Edit Profile' button is in the above screenshot (that's my own profile), we'll put a FOLLOW or FOLLOWING button, depending on our existing relationship.  On clicking the 'FOLLOW' button, we'll use an AJAX call to a ```follow_user``` controller action and the new relationship will be created.  Upon success, we'll use jQuery to transform the 'FOLLOW' button into a green 'FOLLOWING' button (we'll also change the link at this point to point to an ```unfollow_user``` action, just in case our user made a terible mistake and followed a My Little Pony enthusiast).
+Where the 'Edit Profile' button is in the above screenshot (that's my own profile), we'll put a FOLLOW or FOLLOWING button, depending on our existing relationship.  On clicking the 'FOLLOW' button, we'll use an AJAX call to a ```follow_user``` controller action and the new relationship will be created.  Upon success, we'll use jQuery to transform the 'FOLLOW' button into a green 'FOLLOWING' button (we'll also change the link at this point to point to an ```unfollow_user``` action, just in case our user made a terrible mistake and followed a My Little Pony enthusiast).
 
 We'll also adjust our dashboard logic so we're only showing posts from the users we're following and also create a brand new dashboard that emulates our current system of showing EVERYTHING (so we can find new users to follow).
 
@@ -70,7 +70,7 @@ In the opposite direction, imagine that the user with the ```id``` of 1 is follo
 @current_user.followers
 ```
 
-If this hasn't sunk in yet, do not fear.  It may take time.  As I've mentioned previously, this sort of relationship made me *quite* uncomfortable for an extended period of time.  Hopefully your brain is better aligned and it'll click for you sooner!  Perservere and you'll be ok in the end I promise (I make no actual legally-binding promises).
+If this hasn't sunk in yet, do not fear.  It may take time.  As I've mentioned previously, this sort of relationship made me *quite* uncomfortable for an extended period of time.  Hopefully your brain is better aligned and it'll click for you sooner!  Persevere and you'll be ok in the end I promise (I make no actual legally-binding promises).
 
 
 
@@ -88,7 +88,7 @@ What you want to do at this point is to create a table that has two integer colu
 
 Call the new table 'follows'.
 
-Give it a go now!  Use your google-foo if you must.
+Give it a go now!  Use your Google-foo if you must.
 
 ![Your turn!](http://www.devwalks.com/content/images/2015/06/YourTurn-1.png)
 
@@ -275,7 +275,7 @@ Check it out!
 
 Let's make it do something now.
 
-First, we'll need to decide where we want to add the 'follow' and 'unfollow' functionality.  It's tempting to use our existing ```profiles_controller``` but the functionality isn't *really* profile focussed. Let's separate the functionality into its own controller.
+First, we'll need to decide where we want to add the 'follow' and 'unfollow' functionality.  It's tempting to use our existing ```profiles_controller``` but the functionality isn't *really* profile focused. Let's separate the functionality into its own controller.
 
 ```ruby
 rails g controller Relationships follow_user unfollow_user

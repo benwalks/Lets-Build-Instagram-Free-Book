@@ -28,7 +28,7 @@ Now, why would a user be notified?  There are a few scenarios:
 - Someone comments on one of our rad photos.
 - Someone likes one of our posts.
 
-We could also create a feature where we get notified if someone makes a comment in a thread we've also commented in but this is one of my least favourite Facebook notification features, so let's not encourage it any further.  If you want to challenge yourself, try to build it yourself.  I'd recommend using a Subscription model and creating a many to many relationship between Users & Posts *through* subscriptions.
+We could also create a feature where we get notified if someone makes a comment in a thread we've also commented in but this is one of my least favorite Facebook notification features, so let's not encourage it any further.  If you want to challenge yourself, try to build it yourself.  I'd recommend using a Subscription model and creating a many to many relationship between Users & Posts *through* subscriptions.
 
 Sounds good, time to get nerdy.
 
@@ -115,7 +115,7 @@ has_many :notifications, dependent: :destroy
 
 Now that we have our model sorted, you'd think that we'd generate a controller but first, let's see how we'll slot our notifications into our current system.
 
-Open up your comments controller at ```app/controllers/comments_controller.rb```.   Pan your eyes to the create action and check out the current flow.  We build a comment based on the comment params and assign a user id.  If that comment saves, we go ahead and respond with some javascript that updates the user's page.  Let's add another line to create a notification.
+Open up your comments controller at ```app/controllers/comments_controller.rb```.   Pan your eyes to the create action and check out the current flow.  We build a comment based on the comment params and assign a user id.  If that comment saves, we go ahead and respond with some JavaScript that updates the user's page.  Let's add another line to create a notification.
 
 Underneath the ```if @comment.save``` line, add the following:
 
@@ -382,7 +382,7 @@ def index
 end
 ```
 
-And promply added the below line to my brand new ```views/notifications/index.html.haml``` file:
+And promptly added the below line to my brand new ```views/notifications/index.html.haml``` file:
 
 ```ruby
 = render @notifications
