@@ -706,8 +706,8 @@ $('#comment_content_<%= @post.id %>').val('')
 Clicked? $('#comments_<%= @post.id %>').append("<%=j render 'comments/comment', post: @post, comment: @comment %>") : $('.more-comments').html("view all <%= @post.comments.count %> comments")
 ```
 Lets run through this real quick:
-1. We are still removing the text from the content once the comment has been submitted. 
-2. We are looking in the global name space whether the Clicked variable is True. The Clicked variable is True if the "view all comments" is clicked, and we are viewing all the comments. If it's true, we will append the new comment to the bottom. If the Clicked variable is false, that means we are still only seeing four comments and the "view all #{post.comments.count} comments." We will change the @post.comments.count to current amount of comments. 
+- 1. We are still removing the text from the content once the comment has been submitted. 
+- 2. We are looking in the global name space whether the Clicked variable is True. The Clicked variable is True if the "view all comments" is clicked, and we are viewing all the comments. If it's true, we will append the new comment to the bottom. If the Clicked variable is false, that means we are still only seeing four comments and the "view all #{post.comments.count} comments." We will change the @post.comments.count to current amount of comments. 
 
 
 ## The End, for now
