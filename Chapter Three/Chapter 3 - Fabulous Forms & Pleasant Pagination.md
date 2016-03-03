@@ -698,7 +698,7 @@ The above process seems complex for what seemed initially to be a simple feature
 We just needed to add our extra partial and some dynamic id's and data-attributes to make this simple flow work correctly!
 
 
-Now this ish is working, but the comments are still appending after the link! This is where our Clicked variable is gonna come into play:
+Now our comments are working, but they are still appending after the link! This is where our Clicked variable is gonna come into play:
 
 Remove the first line from the ```create.js.erb``` and replace it with the Clickable ternary operator:
 ```javascript
