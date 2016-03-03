@@ -614,7 +614,7 @@ $( document ).ready(function() {
 
 I'm going to humor you and run through this line by line.  If you don't need me to, just skip the dot points below and bask in your smugness.
 
-1. Assign Clicked to the global namespace so we can access it in other files - specifically, the comment's create.js.erb to get rid of the comment appending after the link.
+1. Assign Clicked to the global namespace so we can access it in other files - specifically, the comments create.js.erb to get rid of the comment appending after the link.
 2. Wait for the document to be ready before running the code.
 2. Listen for a click event on the ```.more-comments``` classes (each of our 'view all x comments' links).
 3. Once the AJAX call has been successful, move on to the next lines.
