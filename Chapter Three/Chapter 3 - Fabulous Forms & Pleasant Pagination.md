@@ -581,16 +581,16 @@ It's not as complex as it may sound and I assure you it'll make more sense after
 ```ruby
 .comments{id: "comments_#{post.id}"}
   - if post.comments.any?
+    = render post.comments.first(4), post: post
     .paginator{id: "#comments-paginator-#{post.id}"}
       - unless post.comments.count <= 4
         = link_to "view all #{post.comments.count} comments", post_comments_path(post), remote: true, class: 'more-comments', data: {post_id: "#{post.id}", type: "html"}
-    = render post.comments.last(4), post: post
 ```
 
 A bit gross, right?  Yeah, it should be tidied up and thrown into a helper method but let's just deal with this for the moment.  I want you to notice a few things:
 
 - We're adding ```#{post.id}``` inline ruby in multiple positions in order to identify the specific post we're referring to in our jQuery.  We're also giving our ```link_to``` helper method a html 5 data attribute of ```data-post-id``` that is set to the id of the post for the sake of our jQuery too.
-- Next, notice that we're rendering ```post.comments.last(4)``` on the last line, we're not even using kaminari's pagination in this solution.
+- Next, notice that we're rendering ```post.comments.first(4)``` after checking whether there are any comments, we're not even using kaminari's pagination in this solution. Currently, if you add a comment, it will append the comment after the "view all comments" link. We definitely do not want this, and will address this in the next few sections.
 - Above the ```link_to``` method, we've got an 'if' statement that will only reveal the 'view all posts' link if there are greater than 4 comments for that specific post, otherwise the link would be redundant.
 - Inside the ```link_to``` helper method, we've got the ```remote: true``` attribute, but we're also specifying that we want html to be returned in the data attributes hash.
 
@@ -599,12 +599,14 @@ Good?  Good.  It's worth noting what our ```link_to``` helper method is actually
 Ok, so we've got our link set up and we have some dynamically generated post.id's around the place so we can manipulate the correct items.  Let's now see what we're doing in our javascript.  I've stored this file in the standard javascripts folder, ```app/assets/javascripts``` and called it, ```loadMoreComments.js```.
 
 ```javascript
+var Clicked;
 $( document ).ready(function() {
   $('.more-comments').click( function() {
     $(this).on('ajax:success', function(event, data, status, xhr) {
       var postId = $(this).data("post-id");
       $("#comments_" + postId).html(data);
       $("#comments-paginator-" + postId).html("<a id='more-comments' data-post-id=" + postId + "data-type='html' data-remote='true' href='/posts/" + postId + "/comments>show more comments</a>");
+      Click = true;
     });
   });
 });
@@ -612,11 +614,13 @@ $( document ).ready(function() {
 
 I'm going to humor you and run through this line by line.  If you don't need me to, just skip the dot points below and bask in your smugness.
 
-1. Wait for the document to be ready before running the code.
+1. Assign Clicked to the global namespace so we can access it in other files - specifically, the comment's create.js.erb to get rid of the comment appending after the link.
+2. Wait for the document to be ready before running the code.
 2. Listen for a click event on the ```.more-comments``` classes (each of our 'view all x comments' links).
 3. Once the AJAX call has been successful, move on to the next lines.
 4. Assign a ```postId``` variable based on the contents of the ```data-post-id``` html attribute (which we assigned in our post partial above).
 5. Replace the ```#comments_ + postId``` div with the contents of the returned AJAX data.
+6. Return True to clicked when the "view all comments" has been clicked on. This will help distinguish whether all the comments are showing, or just the four.
 
 Remember, we're returning html in our AJAX call.  Based on our ```link_to``` method, we're sending a GET request to the comments of a specific post id.  What else does this mean?  We're going to need to create an ```index``` action within our comments controller in order to present some html to send over.
 
@@ -693,6 +697,17 @@ The above process seems complex for what seemed initially to be a simple feature
 
 We just needed to add our extra partial and some dynamic id's and data-attributes to make this simple flow work correctly!
 
+
+Now this ish is working, but the comments are still appending after the link! This is where our Clicked variable is gonna come into play:
+
+Remove the first line from the ```create.js.erb``` and replace it with the Clickable's ternary function
+```javascript
+$('#comment_content_<%= @post.id %>').val('')
+Clicked? $('#comments_<%= @post.id %>').append("<%=j render 'comments/comment', post: @post, comment: @comment %>") : $('.more-comments').html("view all <%= @post.comments.count %> comments")
+```
+Lets run through this real quick:
+1. We are still removing the text from the content once the comment has been submitted. 
+2. We are looking in the global name space whether the Clicked variable is True. The Clicked variable is True if the "view all comments" is clicked, and we are viewing all the comments. If it's true, we will append the new comment to the bottom. If the Clicked variable is false, that means we are still only seeing four comments and the "view all #{post.comments.count} comments." We will change the @post.comments.count to current amount of comments. 
 
 
 ## The End, for now
