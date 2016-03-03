@@ -700,7 +700,7 @@ We just needed to add our extra partial and some dynamic id's and data-attribute
 
 Now this ish is working, but the comments are still appending after the link! This is where our Clicked variable is gonna come into play:
 
-Remove the first line from the ```create.js.erb``` and replace it with the Clickable's ternary function
+Remove the first line from the ```create.js.erb``` and replace it with the Clickable ternary function:
 ```javascript
 $('#comment_content_<%= @post.id %>').val('')
 Clicked? $('#comments_<%= @post.id %>').append("<%=j render 'comments/comment', post: @post, comment: @comment %>") : $('.more-comments').html("view all <%= @post.comments.count %> comments")
