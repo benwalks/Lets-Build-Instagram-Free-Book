@@ -773,6 +773,14 @@ I know, I know. You, the goat, and I are all thinking it. So let's run through t
 5. We are checking whether state 2 (if there are four comments) is true. If so we are appending the link to the bottom, and calling the ClickableCommentsLink() to make sure that it knows that we want an ajax call on that link, if it is clicked.
 6. We are checking whether state 3 (if there are more than four comments) is true. If so we updating the link to show the new amount of comments. 
 
+Now we need to quickly update our ```Destroy.js.erb```. Our code will look like this:
+```javascript
+$('#comments_<%= @post.id %>').html("<%= j render @post.comments, post: @post, comment: @comment %>");
+Append.comment_count -= 1
+```
+
+All we are adding to this is the logic to decrease the value for ```Append.comment_count``` when the comment is deleted. 
+
 
 ## The End, for now
 
