@@ -582,14 +582,14 @@ It's not as complex as it may sound and I assure you it'll make more sense after
 .comments{id: "comments_#{post.id}"}
   - if post.comments.any?
     = render post.comments.first(4), post: post
-    .paginator{id: "#comments-paginator-#{post.id}"}
-      - unless post.comments.count <= 4
-        = link_to "view all #{post.comments.count} comments", post_comments_path(post), remote: true, class: 'more-comments', data: {post_id: "#{post.id}", type: "html"}
+    - unless post.comments.count <= 4
+      .paginator{id: "#comments-paginator-#{post.id}"}
+        = link_to "view all #{post.comments.count} comments", post_comments_path(post), remote: true, class: 'more-comments', id: "more_comments_#{post.id}", data: {post_id: "#{post.id}", type: "html, value:" "#{post.comments.count}"}
 ```
 
 A bit gross, right?  Yeah, it should be tidied up and thrown into a helper method but let's just deal with this for the moment.  I want you to notice a few things:
 
-- We're adding ```#{post.id}``` inline ruby in multiple positions in order to identify the specific post we're referring to in our jQuery.  We're also giving our ```link_to``` helper method a html 5 data attribute of ```data-post-id``` that is set to the id of the post for the sake of our jQuery too.
+- We're adding ```#{post.id}``` inline ruby in multiple positions in order to identify the specific post we're referring to in our jQuery.  We're also giving our ```link_to``` helper method a html 5 data attribute of ```data-post-id``` that is set to the id of the post, as well as ```data-post-value``` which is set to amount of comments the post contains, for the sake of our jQuery too.
 - Next, notice that we're rendering ```post.comments.first(4)``` after checking whether there are any comments, we're not even using kaminari's pagination in this solution. Currently, if you add a comment, it will append the comment after the "view all comments" link. We definitely do not want this, and will address this in the next few sections.
 - Above the ```link_to``` method, we've got an 'if' statement that will only reveal the 'view all posts' link if there are greater than 4 comments for that specific post, otherwise the link would be redundant.
 - Inside the ```link_to``` helper method, we've got the ```remote: true``` attribute, but we're also specifying that we want html to be returned in the data attributes hash.
@@ -599,28 +599,76 @@ Good?  Good.  It's worth noting what our ```link_to``` helper method is actually
 Ok, so we've got our link set up and we have some dynamically generated post.id's around the place so we can manipulate the correct items.  Let's now see what we're doing in our javascript.  I've stored this file in the standard javascripts folder, ```app/assets/javascripts``` and called it, ```loadMoreComments.js```.
 
 ```javascript
-var Clicked;
-$( document ).ready(function() {
+var Append = {};
+Append.open = false;
+function ClickableCommentsLink(){
   $('.more-comments').click( function() {
-    $(this).on('ajax:success', function(event, data, status, xhr) {
+    $(this).on('ajax:success', function(event, data, status,xhr) {
       var postId = $(this).data("post-id");
       $("#comments_" + postId).html(data);
-      $("#comments-paginator-" + postId).html("<a id='more-comments' data-post-id=" + postId + "data-type='html' data-remote='true' href='/posts/" + postId + "/comments>show more comments</a>");
-      Click = true;
-    });
+      $("#comments-paginator-" + postId).html("<a id='more-comments' data-post-id=" + postId + "data-type='html' data-remote='true' href='/posts/" + postId + "/comments>show morecomments</a>");
+      Append.open = true;
+      Append.comment = true; 
+      Append.link = false;  
+    }); 
   });
+}
+
+function DestroyComments(){
+  $('.delete-comment').click( function() {
+    Append.id = this;
+    Append.post_id = $(this).data("post-id");
+    Append.comment_count = $(this).data("value");
+  }); 
+}
+
+$( document ).ready(function() {
+  ClickableCommentsLink();
+  DestroyComments();
+  $('.comment_content').click (function(){
+  	Append.id = this;
+  	Append.post_id = $(this).data("post-id");
+  	if (Append.comment_count == undefined){ Append.comment_count = $(this).data("value"); }
+  	if(Append.comment_count < 4){ Append.comment = true; Append.link = false; } 
+  	else if(Append.comment_count == 4){ Append.comment = false; Append.link = true; } 
+  	else if(Append.comment_count > 4){ Append.comment = false; Append.link = false;  } 
+  })
 });
 ```
 
-I'm going to humor you and run through this line by line.  If you don't need me to, just skip the dot points below and bask in your smugness.
+Woo. That's a lot of javascript. Don't worry we are going to run through all of it. So we are going to start at the heart of the program, the ```$( document ).ready(function(){ ... }); ```, but first we need to talk about that Append object at the top. We need to create a lot of global variables so our other javascript files can access them - in our case, it will be the create.js.erb, and delete.js.erb. , but we don't want to create a lot of variables, for instance  ```var append_comment```, or ```var append_link```. The reason we don't want to, is due to idea of not polluting out global namespace. In other words, we may want to set a global variable of ``` var append_comment``` later on in our programs life, which will conflict with the other one. To remedy this, we will create only one global variable, Append, and access everything through it.
 
-1. Assign Clicked to the global namespace so we can access it in other files - specifically, the comments create.js.erb to get rid of the comment appending after the link.
-2. Wait for the document to be ready before running the code.
-2. Listen for a click event on the ```.more-comments``` classes (each of our 'view all x comments' links).
-3. Once the AJAX call has been successful, move on to the next lines.
-4. Assign a ```postId``` variable based on the contents of the ```data-post-id``` html attribute (which we assigned in our post partial above).
-5. Replace the ```#comments_ + postId``` div with the contents of the returned AJAX data.
-6. Return True to clicked when the "view all comments" has been clicked on. This will help distinguish whether all the comments are showing, or just the four.
+We are going to skip the first two functions, ```ClickableCommentsLink()``` and ```DestroyComments()```, and come back to those in a few paragraphs.
+
+So the document is waiting for the ```.comment_content``` (which is the text body of the form when submitting a comment) to be clicked, and when it is, it will fireoff the function(callback)
+
+After the ```.comment_content``` has been clicked, we save the instance of ```this``` to ```Append.id``` - in this case, the ```this``` refers to the text-field. In this text field, we have created an HTML 5 data attribute which holds references the post id. We are going to save that value to ```Append.post_id```. We then need to grab how many comments this current post has, so we can set up some conditional states (will talk about that in the next paragraph) 
+So, when we are adding comments there are really four beginning states 
+1. When there's less than four comments
+2. Exactly four comments
+3. More than four comments
+4. And when we are looking at all the links after clicking view all.
+
+So what exactly do we want to do with the four states? Well,
+1. The first state is when there are less than four comments, and we just want to append the comment to the end. So, we are going to give this state an 'object key' of ```Append.comment``` with the 'value' of true.
+2. The second state is when there are exactly four comments. We don't want to append the comment to the end of this post, but we do want to append a link that when clicked will display all the comments. So, we will set the ```Append.comment``` to false and create a new 'object key' of ```Append.link``` with a value set to true.
+3. The third state is when there are more than four comments. We don't want to append a comment, and we don't want to append the link, what we do want to do is update the link to show the current amount of comments. Hmm. Well, we don't need to create a new 'object key-value pair' for this, as we can just set them both to false! So let's set the ```Append.link``` to false, and the ```Append.comment``` to false as well.
+4. The last state is when the "view all comments" link is clicked. What we do want to do is append a comment at this point, and we don't want to append a link. If you wanted to make your program run thousands of a second faster, you could just use ```Append.comment``` flag and set it true. For keeping a clear concious, we are going to create another 'object key' ```Append.open``` and set the 'value' to true. Just to keep a clear head, we are going to set the ```Append.link``` to false, and the ```Append.comment``` to true.
+
+Woo, that was a mouthful. Now back to the ```ClickableCommentsLink()``` and ```DestroyComments()```. Okay so what are we doing in the ```ClickableCommentsLink()```:
+
+1. Listen for a click event on the ```.more-comments``` classes (each of our 'view all x comments' links).
+2. Once the AJAX call has been successful, move on to the next lines.
+3. Assign a ```postId``` variable based on the contents of the ```data-post-id``` html attribute (which we assigned in our post partial above).
+4. Replace the ```#comments_ + postId``` div with the contents of the returned AJAX data.
+5. Return True to clicked when the "view all comments" has been clicked on. This will help distinguish whether all the comments are showing, or just the four.
+6. We are also setting the ```Append.open``` and ```Append.comment``` flags to true, and ```Append.link``` to false, as we are no viewing all of the comments.
+
+
+Not too bad, not too bad. So, what about the ```DestroyComments()```?
+All we are doing here is grabbing the values of the post like we did during the document ready. The reason we are doing this again is to eradict a bug when the first thing someone does is delete a comment when visiting a page. Yes, those three lines can moved into its own function and can be called from the two functions. Yes, the goat would be very pleased if you did this yourself.
+
+Enough Javascript for now, back to rails.
 
 Remember, we're returning html in our AJAX call.  Based on our ```link_to``` method, we're sending a GET request to the comments of a specific post id.  What else does this mean?  We're going to need to create an ```index``` action within our comments controller in order to present some html to send over.
 
@@ -657,8 +705,9 @@ Now, here's the last piece of the puzzle, our unchanged ```views/comments/_comme
   .comment-content
     = comment.content
   - if comment.user == current_user
-    = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true do
-      %span(class="glyphicon glyphicon-remove delete-comment")
+   = link_to post_comment_path(post, comment), method: :delete, data: {post_id: post.id, value: post.comments.count, confirm: "Are you sure?" }, remote: true, id: "delete-#{comment.id}", class: "delete-comment" do
+      %span(class="glyphicon glyphicon-remove delete-comment-icon")
+
 ```
 
 This should be familiar as it remains unchanged from what we built in [Part 2 of the guide](http://www.devwalks.com/lets-build-instagram-with-rails-like-me-and-tell-me-im-beautiful/).
@@ -698,16 +747,31 @@ The above process seems complex for what seemed initially to be a simple feature
 We just needed to add our extra partial and some dynamic id's and data-attributes to make this simple flow work correctly!
 
 
-Now our comments are working, but they are still appending after the link! This is where our Clicked variable is gonna come into play:
+So now we need to add our state conditioning to make our comments function properly!
 
-Remove the first line from the ```create.js.erb``` and replace it with the Clickable ternary operator:
+Remove the previous lines from  ```create.js.erb``` and replace it with these:
 ```javascript
 $('#comment_content_<%= @post.id %>').val('')
-Clicked? $('#comments_<%= @post.id %>').append("<%=j render 'comments/comment', post: @post, comment: @comment %>") : $('.more-comments').html("view all <%= @post.comments.count %> comments")
+$('#comment_content_<%= @post.id %>').blur();
+Append.comment_count += 1
+$(Append.id).attr('data-value', Append.comment_count);
+
+if (Append.comment || Append.open ){ $('#comments_<%= @post.id %>').append("<%=j render 'comments/comment', post: @post, comment: @comment %>"); }
+
+else if ((Append.comment && Append.open) === false && Append.link === true) { 
+	$('#comments_' + Append.post_id).append("<div class='paginator' id='#comments-paginator-" + Append.post_id + "'><a class='more-comments' id='more_comments_" + Append.post_id + "' data-post-id='" + Append.post_id + "' data-type='html' data-value='" + Append.comment_count + "' href='/posts/" + Append.post_id + "/comments'>view all " + Append.comment_count + " comments</a></div>"); 
+	ClickableCommentsLink(); 
+}
+
+else if ((Append.comment && Append.open && Append.link) === false) { $('#more_comments_<%= @post.id %>').html("view all <%= @post.comments.count %> comments"); }
 ```
-Lets run through this real quick:
-- 1. We are still removing the text from the content once the comment has been submitted. 
-- 2. We are looking in the global name space whether the Clicked variable is True. The Clicked variable is True if the "view all comments" is clicked, and we are viewing all the comments. If it's true, we will append the new comment to the bottom. If the Clicked variable is false, that means we are still only seeing four comments and the "view all #{post.comments.count} comments." We will change the @post.comments.count to current amount of comments. 
+I know, I know. You, the goat, and I are all thinking it. So let's run through this right now:
+1. We are still removing the text from the content once the comment has been submitted. 
+2. We are adding the jquery blur to the #comment_content so that we remove the focus from the form.
+3. We are incrementing the Append.comment_count (as we are posting a new comment)
+4. We are checking whether state 1 (less than four comments) or state 4 (if we have clicked the "view all comments" link) is true. If so, we will append the comment to the end.
+5. We are checking whether state 2 (if there are four comments) is true. If so we are appending the link to the bottom, and calling the ClickableCommentsLink() to make sure that it knows that we want an ajax call on that link, if it is clicked.
+6. We are checking whether state 3 (if there are more than four comments) is true. If so we updating the link to show the new amount of comments. 
 
 
 ## The End, for now
