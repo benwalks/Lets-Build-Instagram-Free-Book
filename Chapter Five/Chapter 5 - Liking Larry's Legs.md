@@ -388,7 +388,7 @@ body {
       font-weight: 500;
       margin-right: 0.3em;
     }
-    .delete-comment {
+    .delete-comment-icon {
       float: right;
       color: #515151;
     }
