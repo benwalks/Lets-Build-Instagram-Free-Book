@@ -823,7 +823,7 @@ The partial view should be called ```_post.html.haml``` and it should live under
               = comment.content
             - if comment.user == current_user
               = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } do
-                %span(class="glyphicon glyphicon-remove delete-comment")
+                %span(class="glyphicon glyphicon-remove delete-comment-icon")
     .comment-like-form.row
       .like-button.col-sm-1
         %span(class="glyphicon glyphicon-heart-empty")
@@ -955,7 +955,7 @@ body {
       font-weight: 500;
       margin-right: 0.3em;
     }
-    .delete-comment {
+    .delete-comment-icon {
       float: right;
       color: #515151;
     }
@@ -1089,7 +1089,7 @@ The comment partial is shown below.  Call it ```_comment.html.haml``` and create
     = comment.content
   - if comment.user == current_user
     = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } do
-      %span(class="glyphicon glyphicon-remove delete-comment")
+      %span(class="glyphicon glyphicon-remove delete-comment-icon")
 ```
 
 Pretty basic right?  We’ve just moved the comment part of our form into a separate file.  Now, we’ll have to adjust our ```_post.html.haml``` partial so it renders the comments appropriately.  Adjust your post partial so it looks like the code seen here:
@@ -1225,7 +1225,7 @@ This time we’re adding it to the destroy form, not the create form (you can fi
     = comment.content
   - if comment.user == current_user
     = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true do
-      %span(class="glyphicon glyphicon-remove delete-comment")
+      %span(class="glyphicon glyphicon-remove delete-comment-icon")
 ```
 
 Now its time to...
@@ -1269,6 +1269,7 @@ And guess what?  That’s it for the delete functionality as well!
 Try it now!  Beautiful, right?  You click the 'x', you get the prompt, you accept and....
 
 Comment deleted.
+
 
 ### 
 
