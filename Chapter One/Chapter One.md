@@ -13,7 +13,7 @@ And in this guide we'll be doing the same to begin.  Unfortunately, this is the 
 
 
 
- ![End Result](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter One/End Result.png)
+ ![End Result](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20One/End%20Result.png)
 
 
 
@@ -27,7 +27,7 @@ Jump in your terminal and cd to where you want to create your project.
 
 Now use the rails command for creating a new project and we can begin with style.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 
 
@@ -40,7 +40,7 @@ ___
 
 Now cd to your new directory in the terminal and let’s run the server to see if we’ve got rails working properly.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Can’t remember how to run a rails server?
@@ -57,7 +57,7 @@ ___
 
 You should see this screen as a friendly reminder that you’re awesome:
 
- ![NewRailsApp](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter One/NewRailsApp.png)
+ ![NewRailsApp](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20One/NewRailsApp.png)
 
 You are by the way ;)
 
@@ -74,7 +74,7 @@ To remedy the situation, we’re going to need to create a controller that will 
 
 Let’s generate a controller and call it posts.  Do that now in your terminal.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **Need a hand, friend?**
 ```language-terminal
@@ -86,7 +86,7 @@ ___
 Now, let’s navigate over to our newly created controller ```posts_controller.rb``` and add a controller action.  First, let’s create our index action with no contents.
 
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **Need another hand?**
 ```language-ruby
@@ -98,7 +98,7 @@ ___
 
 Our routes for our posts controller are going to be standard Rails RESTFUL routes.  Rails let’s us simplify the routing in this scenario by using "resources".  Create a resources route for the posts controller in your routes.rb file now.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **Resource Shmesource**
 
@@ -124,7 +124,7 @@ Haml version:
 ```
 Now we have a functional index view, let's set the index action in the PostsController to be our root route within routes.rb.
 
-  ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+  ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Add the following line to your routes.rb file.
@@ -151,7 +151,7 @@ We’ll get back to actually having something of value in our index but for the 
 
 We’re going to need to generate a model in terminal to store our posts, including caption and image.  Let’s create the model “post” with only a string column for “caption”.  We’ll add the image functionality in a moment.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **Show me how, I dare not create a model all by myself!**
 
@@ -163,7 +163,7 @@ ___
 
 Now that we’ve created the migration files for our database we need to migrate those changes.  Run the Rails db migrate command in your terminal.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **I forget stuff sometimes!**
 ```language-ruby
@@ -179,7 +179,7 @@ Let’s now add the image uploading functionality through a super fabulous gem c
 
 If you don’t trust yourself, read the hidden section below but I implore you to do it yourself and continue without reading it.  If you run into trouble in the next step it’ll be a good exercise for you in troubleshooting!
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **Please help with the Paperclips!**
 
@@ -253,7 +253,7 @@ Not sure how to add the image upload functionality?  I’ll give you a hint, go 
 
 If you’re still struggling, that’s ok, just do what you can and then read the answer below.  Create your new view under app/views/posts and call it ```new.html.erb``` or ```new.html.haml``` and build the form there.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **Oh god, Please tell me, how do I create the form with simple_form?**
 
@@ -267,7 +267,7 @@ ___
 
 Now you should be able to start creating your form in your new view!  Follow along with the simple\_form [docs](http://github.com/plataformatec/simple_form).
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 Here’s a haml example.  You should be able to translate this back to erb if required.
 
@@ -303,7 +303,7 @@ Hmmm, it’s asking for a template but we don’t really want to create a templa
 
 Let’s write some code that will save the data from the form to our database.  You’ve probably done this before but it’s easy to forget.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
  **Show me how!**
 
@@ -331,7 +331,7 @@ ___
 
 Now that the information is being saved in the create action, we need to redirect the user to somewhere useful.  Let’s send them back to the index action for the time being with the redirect_to method.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **What is this magic?**
 
@@ -354,7 +354,7 @@ Alright, let’s try to submit the form again.  Navigate back to localhost:3000/
 
 Finally, we've avoided errors!  But wait, where the hell is your post?  Let’s quickly set it up now.  To make sure our post even exists, jump into your terminal and run your rails console.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **I forget how…**
 ```language-terminal
@@ -365,7 +365,7 @@ ___
 
 Now try to find that post we submitted using your ruby and rails skills.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **I've lost all my Ruby skills in a freak water slide accident…**
 
@@ -383,7 +383,7 @@ Right then, now that we know that we're actually saving something, let’s get A
 
 Create an instance variable under your index action that collects all of the posts in your Post model.  This will let us display all of our posts in our index view!
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **Please explain this “variable”…**
 
@@ -401,7 +401,7 @@ ___
 
 Once you’ve done this, we want to iterate over each post in that collection and display it for our viewing pleasure.  We’ll need to do this in the index view.  Do your best to iterate this collection using a simple block, outputting the captions and the images.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 A very simple haml version of this is seen here if you need a hand:
 ```language-ruby
@@ -413,7 +413,7 @@ ___
 
 If we refresh our index, all we’re getting is a crappy image path on each post.  Let’s use rail’s image\_tag helper to actually output our image.  You can read up on it yourself [here](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html#method-i-image_tag) or you can see how to implement this the easy way below.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 **I don’t trust your dodgy links, show me the easy way!**
 
@@ -429,7 +429,7 @@ Now navigate to your index page (http://localhost:3000) and....
 
 *Oh my god.  Look at it.*
 
- ![Midway App](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter One/Midway App.png)
+ ![Midway App](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 What an incredible achievement.  It’s not super functional yet though, I can’t even submit a new post without manually navigating to /posts/new and we might want to be able to edit or delete our posts in case we upload a picture of our reproductive organs (accidentally).  
 
@@ -441,7 +441,7 @@ Being able to show individual posts would be nice too but that can all wait beca
 
 Instagram has recently revamped their desktop site so I’m just going to do that.  BUT to make it easier I’m going to use the CSS framework, Bootstrap as my foundation.  Install the bootstrap gem [found here](https://github.com/twbs/bootstrap-sass) in your gemfile as per their docs.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 You’re getting lazy.
 ```language-ruby
@@ -480,7 +480,7 @@ Please note that I’ve added a “New Post” button that links to our new Post
 
 Let’s give each of our individual posts their own full-width row using the bootstrap divs.  Remember, try to do it yourself first.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ------
 
@@ -599,7 +599,7 @@ body {
 ```
 Whether you’ve copied me or stolen it yourself, it’s time to refresh your index page and look!
 
- ![Cupcake Post](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter One/Cupcake Post.png)
+ ![Cupcake Post](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20One/Cupcake%20Post.png)
 
 I don’t like to give myself too much praise but this is looking pretty bad-ass now.  Personally, I much prefer working on a site that looks good.  It’s my inner artist coming out.
 
@@ -620,7 +620,7 @@ Once again, feel free to do this yourself.  Keep in mind that Instagram is a mob
 
 Navigate to the new view if you haven’t already and admire your handy work.  I'm still not not super happy with the way this form looks but it'll do for the moment.
 
- ![New Form](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter One/New Form.png)
+ ![New Form](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20One/New%20Form.png)
 
 Let’s keep building the apps functionality now.
 
@@ -634,7 +634,7 @@ Let's create the ability to show a single post (and later on, all the associated
 
 First create a show action in your PostsController.  You know how to do this by now.  We want this action to have a ```@post``` instance variable that points to the specific post we're referring to.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ____
 
@@ -652,7 +652,7 @@ Now let's fiddle with the image\_tag on our index view so that each image will l
 
 Combining image\_tag and link_to tags will be commonplace in your rails career, work out how to do it via Google searches before cheating below.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 
 Adjust your image tags to include the link_to helper.
@@ -667,7 +667,7 @@ This will let us click our images in order to take us to the individual post.  T
 
 The only issue? We don't have a view for our show action.  Create one now that shows us the same information that can be seen on our index view.  The only difference is that we won't be iterating over many posts, we're just referring to one.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 It's so similar to the index!
@@ -702,7 +702,7 @@ We’re going to need a view with a form to update our post…..
 
 Give it a go yourself. Hint:  You’re going to need two extra actions in your posts controller and only a single view (It will look very similar to your new and create actions).  Refer to your old tutorials if you have to, it’ll be much more useful than me holding your hand through it.  
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 *But your hands are so moist...*
 
@@ -746,7 +746,7 @@ We have two shiny new actions in our posts controller and a brand spanking new f
 
 I simply want to display the existing image being used for the post.  Look at how you display your image in your index view and use the same method in your edit view to display it.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 I just want to be sure I’m doing it right…
 
@@ -789,7 +789,7 @@ OK, but you should know that I’m not happy about it (I think you look great in
 
 Simply create a link on the edit page for now so all of our users can delete each-others posts at will (We’ll fix this later I promise, this is a terrible idea). Go forth and destroy!
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 
 First our destroy action in posts_controller.rb
@@ -818,7 +818,7 @@ And our simple link to that action with a warning on our edit view:
 
 It’ll look like this, which is perfect!
 
- ![Edit Form](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter One/Edit Form.png)
+ ![Edit Form](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20One/Edit%20Form.png)
 
 And it’s done!  Try deleting one of your pics now and see what happens.
 
@@ -853,7 +853,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 ```
 Go ahead and create the set_post private method now.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ------
 
@@ -921,7 +921,7 @@ First, let’s create the plan B if something goes wrong when submitting a form.
 
 Create a simple if / else statement in your create block that reads like this for your index.  If your post is successfully created, redirect to the index page, else render the new page.  Your update action will be similar but it’ll ask, if your post is successfully updated, redirect to the index page, else render the edit page.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 ___
 What does this look like?
 
