@@ -142,7 +142,7 @@ Here's my brand new ```create_notification``` method:
 
 ```ruby
 def create_notification(post)
-	return if post.user.id == current_user.id 
+	return if post.user.id == current_user.id
     Notification.create(user_id: post.user.id,
                         notified_by_id: current_user.id,
                         post_id: post.id,
@@ -174,7 +174,7 @@ Let's start building out the UI for this feature now.
 
 ## Showing Notifications
 
- ![Notification Navbar](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Six/Notification Navbar.png)
+ ![Notification Navbar](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Six/Notification%20Navbar.png)
 
 We're going to add a preview of our available notifications to our horizontal navbar at the top of the page, as per Facebook.  Open the navbar partial file at ```app/views/layouts/_navbar.html.haml``` and add the following underneath the ```user_signed_in?``` helper:
 
@@ -401,7 +401,7 @@ Navigate to your brand new notification index page via the top dropdown menu and
 
 **Not great:**
 
- ![Crappy Notifications](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Six/Crappy Notifications.png)
+ ![Crappy Notifications](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Six/Crappy%20Notifications.png)
 
 Let's make it look a little better.
 
@@ -431,7 +431,7 @@ And now we'll attack that ```notification-index-list``` class in our scss file.
 
 If you refresh the page now, it'll look *slightly* better.
 
- ![Slightly Better Notifications](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Six/Slightly Better Notifications.png)
+ ![Slightly Better Notifications](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Six/Slightly%20Better%20Notifications.png)
 
 
 

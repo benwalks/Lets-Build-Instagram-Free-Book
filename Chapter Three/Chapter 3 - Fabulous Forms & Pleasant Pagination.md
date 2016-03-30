@@ -16,32 +16,32 @@ Now that you're primed for an incredible learning experience, let's get into it.
 
 Look at this, just look at it:
 
- ![Photogram Signup - old](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Signup - old.png)
+ ![Photogram Signup - old](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Signup%20-%20old.png)
 
 This is our so-called signup page.  Who would want to sign up to this?  I have no idea. Probably some sort of monster.
 
 Now, look at this:
 
- ![Photogram Login - old](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Login - old.png)
+ ![Photogram Login - old](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Login%20-%20old.png)
 
 Disgusting, right?  If your stomach can handle it, check this out:
 
- ![Photogram Post - Old](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Post - Old.png)
+ ![Photogram Post - Old](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Post%20-%20Old.png)
 
 What the hell is that image upload button doing over there?  Why is it so... unattractive?
 
 Nobody knows, I'm afraid, but fear not.  I'm here to save your eyeballs from further monstrosities.  This is what we're going to create:
 
- ![Photogram Signup - new](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Signup - new.png)
+ ![Photogram Signup - new](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Signup%20-%20new.png)
 
 Ooh!  I'd want to join that!
 
- ![Photogram Login - new](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Login - new.png)
+ ![Photogram Login - new](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Login%20-%20new.png)
 
 
 Oh my!  I'd like to login to that site.
 
- ![Photogram Post - new](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Post - new.png)
+ ![Photogram Post - new](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Post%20-%20new.png)
 
 *Noise of fainting*
 
@@ -71,13 +71,13 @@ This is what we begin with:
 
 Just a simple HAML'd version of the standard Devise register view.  The below image is what we want this form to look like:
 
- ![Photogram Signup - new](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Signup - new.png)
+ ![Photogram Signup - new](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Signup%20-%20new.png)
 
 Using the [Bootstrap documentation for forms](http://getbootstrap.com/css/#forms) and the screenshot above, try to implement the new styling yourself.  If you need some extra tips, think of it like this.  You're going to need to add the background image somehow, and you're going to need to create the area for the form.  I may have used Bootstrap's inbuilt [panels](http://getbootstrap.com/components/#panels) for basic layout too...
 
 Oh yeah, don't forget that the view for our registration form can be found at ```app/views/devise/registrations/new.html.haml```.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -164,7 +164,7 @@ Also take notice of the included line of code in our form (it was in the old ver
 
 Open the registration form now in your browser and submit some crappy information that will fail the validations.  Simple form handles the errors brilliantly.  Not only does it tell us that we've messed up our form somehow, it guides us through exactly what went wrong.  Good stuff.
 
- ![Failed Registration](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Failed Registration.png)
+ ![Failed Registration](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Failed%20Registration.png)
 
 
 
@@ -172,11 +172,11 @@ Open the registration form now in your browser and submit some crappy informatio
 
 You've already built one beautiful form, go ahead and try to build this one now.  Use the exact same principles and heck, the same divs and css.  let's not be wasteful here.  Here's the new and improved login form again for reference:
 
- ![Photogram Login - new](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Login - new.png)
+ ![Photogram Login - new](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Login%20-%20new.png)
 
 Looks similar to the registration form, right?  Well it is.  Go forth and create it.  You can find it at ```app/views/devise/sessions/new.html.haml```.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -230,15 +230,15 @@ Our old form looks a bit yuck and we don't get to preview our images either!  It
 
 This is what the new form looks like again, for reference:
 
- ![Photogram Post - new](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Photogram Post - new.png)
+ ![Photogram Post - new](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Photogram%20Post%20-%20new.png)
 
 The image part of the form is automagically changed when the attached image is changed in the form.  We have a default image in it's place before we've chosen something to upload.  The rest of the form is pretty similar to what it once was, we've just spiced things up a little.
 
-Give it a go now, try to make it look better than mine!  Feel free to give fancy uploaders like Dropzone or jQuery Upload a go too for the sake of a challenge (maybe just create a git branch first.) 
+Give it a go now, try to make it look better than mine!  Feel free to give fancy uploaders like Dropzone or jQuery Upload a go too for the sake of a challenge (maybe just create a git branch first.)
 
 Good luck you crazy thing.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Alright, we've got a few bits to this puzzle but it's much simpler than using Dropzone / jQuery.  First, here's our new view file, found at ```app/views/posts/_form.html.haml```:
@@ -311,7 +311,7 @@ Do your best to fix this issue now.  I'll give you a hint, I used a helper to mo
 
 It's your turn to take the reins.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Ok, here's how I implemented the fix.  First, I deleted the image\_tag from the ```edit.html.haml``` view that was handling our original preview functionality.  The ```edit.html.haml``` file now looks like:
@@ -379,7 +379,7 @@ Why paginate?  Well consider our application for the moment.  Every.single.post 
 
 And that's ok... until it isn't.  It's ok on my development server because I have half a dozen posts.  It's not ok in production when we have many, many more posts.  The same is true for our comments.  Looking at our ```_post.html.haml``` partial, we can see that we're simply iterating through *every single* comment that exists on a post and displaying them all.
 
- ![Lack of Pagination](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Lack of Pagination.png)
+ ![Lack of Pagination](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Lack%20of%20Pagination.png)
 
 It's not ok, so let's fix it now.
 
@@ -423,7 +423,7 @@ And that's it!  Restart your server within your terminal and then re-visit your 
 
 This is all well and good but we don't want our users to manually input parameters into the address bar because we're not complete psychos.  It's incredibly simple to add page number links to your index view.  In fact, it's only just hit me how I've been completely holding your hand through this whole process!  Do me a favour now, and refer back to the [kaminari docs](https://github.com/amatsuda/kaminari) and look for the sections that refers to **views**.  It'll show you how to add the links.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 So you clicked that link and did it yourself right?  Of course, of course, I'm sorry I questioned your honesty.
@@ -454,7 +454,7 @@ Give it a go yourself first though.  Just a simple Google search for 'kaminari a
 
 Go forth and create! If you want bonus points, maybe consider an 'infinite scroll' feature where the extra content will be loaded simply by scrolling down.  Instagram seems to do it both ways, and there are guides for both, so let your heart guide you.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Here's how I implemented this feature, manual clicking style.  First, I slightly adjusted the index view and added a new partial (for the sake of AJAX).  Here's my updated ```index.html.haml```:
@@ -499,7 +499,7 @@ Speaking of styling, below is the the additional lines in my ```application.scss
 }
 ```
 
- ![Load More Posts](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Three/Load More Posts.png)
+ ![Load More Posts](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Three/Load%20More%20Posts.png)
 
 Our index is now rendering a ```views/posts/_posts.html.haml``` partial, which should look like this:
 
@@ -563,7 +563,7 @@ Oh, I'm just thinking out loud in writing, go on, give it a go!
 
 I want to quickly mention here, that this exact feature has had a lot to do with this article being so late.  This drove me mad for a few days trying to work out the best way to implement it.  I'm happy with what I ended up with, BUT if you can recreate exactly what Instagram does OR if you can implement a feature where you click 'load more comments' and it loads them incrementally in a more standard way, please, leave me a comment at the bottom of this article so I can add it on (with full credit of course, you pessimist.)
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Before I give you my solution, I want to tell you the issues I faced when implementing the 'show more comments' feature.  I moaned briefly about this above.
@@ -608,9 +608,9 @@ function ClickableCommentsLink(){
       $("#comments_" + postId).html(data);
       $("#comments-paginator-" + postId).html("<a id='more-comments' data-post-id=" + postId + "data-type='html' data-remote='true' href='/posts/" + postId + "/comments>show morecomments</a>");
       Append.open = true;
-      Append.comment = true; 
+      Append.comment = true;
       Append.link = false;  
-    }); 
+    });
   });
 }
 
@@ -619,7 +619,7 @@ function DestroyComments(){
     Append.id = this;
     Append.post_id = $(this).data("post-id");
     Append.comment_count = $(this).data("value");
-  }); 
+  });
 }
 
 $( document ).ready(function() {
@@ -629,9 +629,9 @@ $( document ).ready(function() {
   	Append.id = this;
   	Append.post_id = $(this).data("post-id");
   	if (Append.comment_count == undefined){ Append.comment_count = $(this).data("value"); }
-  	if(Append.comment_count < 4){ Append.comment = true; Append.link = false; } 
-  	else if(Append.comment_count == 4){ Append.comment = false; Append.link = true; } 
-  	else if(Append.comment_count > 4){ Append.comment = false; Append.link = false;  } 
+  	if(Append.comment_count < 4){ Append.comment = true; Append.link = false; }
+  	else if(Append.comment_count == 4){ Append.comment = false; Append.link = true; }
+  	else if(Append.comment_count > 4){ Append.comment = false; Append.link = false;  }
   })
 });
 ```
@@ -642,8 +642,8 @@ We are going to skip the first two functions, ```ClickableCommentsLink()``` and 
 
 So the document is waiting for the ```.comment_content``` (which is the text body of the form when submitting a comment) to be clicked, and when it is, it will fireoff the function(callback)
 
-After the ```.comment_content``` has been clicked, we save the instance of ```this``` to ```Append.id``` - in this case, the ```this``` refers to the text-field. In this text field, we have created an HTML 5 data attribute which holds references the post id. We are going to save that value to ```Append.post_id```. We then need to grab how many comments this current post has, so we can set up some conditional states (will talk about that in the next paragraph) 
-So, when we are adding comments there are really four beginning states 
+After the ```.comment_content``` has been clicked, we save the instance of ```this``` to ```Append.id``` - in this case, the ```this``` refers to the text-field. In this text field, we have created an HTML 5 data attribute which holds references the post id. We are going to save that value to ```Append.post_id```. We then need to grab how many comments this current post has, so we can set up some conditional states (will talk about that in the next paragraph)
+So, when we are adding comments there are really four beginning states
 1. When there's less than four comments
 2. Exactly four comments
 3. More than four comments
@@ -694,7 +694,7 @@ What else do we need?  How about a view for our new controller action?  We need 
 
 Well that was brief!  What are we doing here?  We're rendering each of our```@comments``` via our existing ```_comment.html.haml``` partial that lives in the ```views/comments``` folder.  We're passing it the ```@post``` instance variable from our index action for the sake of the attached delete feature.
 
-Quite simple, we simply render the ```_comment.html.haml``` partial for each comment. 
+Quite simple, we simply render the ```_comment.html.haml``` partial for each comment.
 
 Now, here's the last piece of the puzzle, our unchanged ```views/comments/_comment.html.haml``` partial.
 
@@ -758,20 +758,20 @@ $(Append.id).attr('data-value', Append.comment_count);
 
 if (Append.comment || Append.open ){ $('#comments_<%= @post.id %>').append("<%=j render 'comments/comment', post: @post, comment: @comment %>"); }
 
-else if ((Append.comment && Append.open) === false && Append.link === true) { 
-	$('#comments_' + Append.post_id).append("<div class='paginator' id='#comments-paginator-" + Append.post_id + "'><a class='more-comments' id='more_comments_" + Append.post_id + "' data-post-id='" + Append.post_id + "' data-type='html' data-remote='true' data-value='" + Append.comment_count + "' href='/posts/" + Append.post_id + "/comments'>view all " + Append.comment_count + " comments</a></div>"); 
-	ClickableCommentsLink(); 
+else if ((Append.comment && Append.open) === false && Append.link === true) {
+	$('#comments_' + Append.post_id).append("<div class='paginator' id='#comments-paginator-" + Append.post_id + "'><a class='more-comments' id='more_comments_" + Append.post_id + "' data-post-id='" + Append.post_id + "' data-type='html' data-remote='true' data-value='" + Append.comment_count + "' href='/posts/" + Append.post_id + "/comments'>view all " + Append.comment_count + " comments</a></div>");
+	ClickableCommentsLink();
 }
 
 else if ((Append.comment && Append.open && Append.link) === false) { $('#more_comments_<%= @post.id %>').html("view all <%= @post.comments.count %> comments"); }
 ```
 I know, I know. You, the goat, and I are all thinking it. So let's run through this right now:
-1. We are still removing the text from the content once the comment has been submitted. 
+1. We are still removing the text from the content once the comment has been submitted.
 2. We are adding the jquery blur to the #comment_content so that we remove the focus from the form.
 3. We are incrementing the Append.comment_count (as we are posting a new comment)
 4. We are checking whether state 1 (less than four comments) or state 4 (if we have clicked the "view all comments" link) is true. If so, we will append the comment to the end.
 5. We are checking whether state 2 (if there are four comments) is true. If so we are appending the link to the bottom, and calling the ClickableCommentsLink() to make sure that it knows that we want an ajax call on that link, if it is clicked.
-6. We are checking whether state 3 (if there are more than four comments) is true. If so we updating the link to show the new amount of comments. 
+6. We are checking whether state 3 (if there are more than four comments) is true. If so we updating the link to show the new amount of comments.
 
 Now we need to quickly update our ```Destroy.js.erb```. Our code will look like this:
 ```javascript
@@ -779,7 +779,7 @@ $('#comments_<%= @post.id %>').html("<%= j render @post.comments, post: @post, c
 Append.comment_count -= 1
 ```
 
-All we are adding to this is the logic to decrease the value for ```Append.comment_count``` when the comment is deleted. 
+All we are adding to this is the logic to decrease the value for ```Append.comment_count``` when the comment is deleted.
 
 
 ## The End, for now

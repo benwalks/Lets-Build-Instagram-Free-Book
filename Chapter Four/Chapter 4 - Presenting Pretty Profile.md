@@ -2,9 +2,9 @@
 
 
 
-In this chapter, let's build a pretty handy feature for any social network:  user profiles. 
+In this chapter, let's build a pretty handy feature for any social network:  user profiles.
 
-![Chapter Preview](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Four/Chapter Preview.png)
+![Chapter Preview](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Four/Chapter%20Preview.png)
 
 
 
@@ -54,7 +54,7 @@ Well first, I don't want the users profile to look like this: ```photogram.com/u
 
 Go on, give it a go yourself.  You can read about routing in Rails [here](http://guides.rubyonrails.org/routing.html#non-resourceful-routes).
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -76,7 +76,7 @@ If you were crazy enough to click on said link, you'll be greeted with yet anoth
 
 You should be ok to generate your own controller.  Remember, we want it to be called 'profiles' and we want a single 'show' action for the moment.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -94,7 +94,7 @@ First, we'll need our 'show' action to actually point us to some useful data.  R
 
 Give it a go yourself.  Remember, we have a param in our url that will be quite useful when trying to find the appropriate user.  We might even be able to use associations to keep the code nice and clean!
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -121,7 +121,7 @@ end
 
 Beautiful. Notice that I've ordered the posts too, just for good measure.
 
-Now that we have an instance variable to work with, let's get the view built to use that data. 
+Now that we have an instance variable to work with, let's get the view built to use that data.
 
 First, rename the ```app/views/profiles/show.html.erb``` to ```show.html.haml``` (if you value your sanity and use haml) and then just copy and paste your existing code from the index view of your posts controller.  That should look something like this:
 
@@ -140,9 +140,9 @@ Give yourself or a nearby human a high five to celebrate.
 
 It's bio and profile picture time!  If you want a refresher on the features we're building here, go back up to the test section and have a quick scan.  If a profile page belongs to us, we want to be able to click an 'Edit Profile' link and there, have the ability to change our profile picture or our bio, save the info and be redirected back to our profile to be greeted with our new information.
 
-Not only this, I want the profile route to NOT be 'photogram.com/users/1/edit'. 
+Not only this, I want the profile route to NOT be 'photogram.com/users/1/edit'.
 
-**NO!** 
+**NO!**
 
 It's ugly and I don't like it!  I want to simply be 'photogram.com/benwalks/edit'.
 
@@ -152,7 +152,7 @@ No wait, first **YOU** create the link.  I'll be waiting over here, behind my mo
 
 Please hurry though, I'm tired and thirsty.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -195,7 +195,7 @@ Yes, yes of course.  Let's build one now.  Instagram's 'Edit Profile' page is a 
 
 This is what our 'edit profile' page is going to look like:
 
-![Edit Profile Page](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Four/Edit Profile Page.png)
+![Edit Profile Page](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Four/Edit%20Profile%20Page.png)
 
 Looks pretty nice, right??  We've simply got a image upload field as our top row, as per our 'New Post' preview and a single 'Bio' text field beneath.
 
@@ -203,7 +203,7 @@ This is **EXACTLY** the kind of thing you can do yourself.  Refer back to your o
 
 Just something to consider hombre, good look.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -247,7 +247,7 @@ In ```app/views/profile/edit.html.haml```:
             = f.submit "Update Profile", class: 'btn btn-success'
 ```
 
-Not too tricky to comprehend, right?  We have two rows for our form, where we refer to an instance variable, ```@user```.  You’ll notice a new helper method, ```profile_avatar_select``` in there, but we’ll get to that in a moment. 
+Not too tricky to comprehend, right?  We have two rows for our form, where we refer to an instance variable, ```@user```.  You’ll notice a new helper method, ```profile_avatar_select``` in there, but we’ll get to that in a moment.
 
 We have our form basics, let’s quickly add a few lines of css to our ```app/assets/stylesheets/application.scss``` file:
 
@@ -277,7 +277,7 @@ So far in our Instagram build, we’ve used the fantastic Paperclip gem to handl
 
 Checkout the great docs [over at github](https://github.com/thoughtbot/paperclip) and implement it for yourself!  Take particular notice of the ['Models'](https://github.com/thoughtbot/paperclip#models) and ['Migrations'](https://github.com/thoughtbot/paperclip#migrations) sections.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -306,7 +306,7 @@ For extra points, generate the full migration in your terminal so you don’t ha
 
 Here’s the goat for inspiration.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -420,7 +420,7 @@ The users active record object is already available with the ```@user``` instanc
 
 Remember, you’ll learn FAR more by doing it yourself, the struggle is key.  Don’t disappoint goat, he’s very judgmental.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -483,7 +483,7 @@ If you were to refresh your page now, you’ll be presented with our profile dat
 
 And refresh!  You’re profile page should be looking glorious.
 
- ![Finished Profile](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Four/Finished Profile.png)
+ ![Finished Profile](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Four/Finished%20Profile.png)
 
 Fantastic.  We’ve not got fully functioning profile pages working for our users... but wait...
 
@@ -497,7 +497,7 @@ This is very bad for obvious reasons.  Let’s fix now.  If you have an elephant
 
 Check out your existing code and see how you could use a very similar feature here to protect our user’s profiles from tomfoolery.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -537,7 +537,7 @@ Notice anything fishy about our Profiles Controller.  Maybe something looks a li
 
 We’re setting the ```@user``` instance variable constantly!  How could we DRY up our code?  Have a ponder or simply checkout how we handled it in our Posts Controller.  We can tidy this right up very easily.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -559,7 +559,7 @@ At this point you can go forth and delete all lines of code which we’ve handle
 
 Last but not least, let’s link up the user names shown on comments and captions to the appropriate user’s profile page.  Try it yourself first, and report back to me once you’ve had a good try.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 

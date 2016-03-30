@@ -29,7 +29,7 @@ All talk and no play makes you, the reader, feel not so gay.  So let's go forth 
 
 At the moment, our user's profiles look like this:
 
- ![Existing User Profiles](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Seven/Existing User Profiles.png)
+ ![Existing User Profiles](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Seven/Existing%20User%20Profiles.png)
 
 We can't actually follow or unfollow a user from here, all we can do is gaze upon their wonderful selfies.
 
@@ -269,7 +269,7 @@ Note we added the styling for the 'unfollow' button as well (we'll add it soon e
 
 Check it out!
 
- ![Profile Follow Button](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Seven/Profile Follow Button.png)
+ ![Profile Follow Button](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Seven/Profile%20Follow%20Button.png)
 
 
 
@@ -444,7 +444,7 @@ end
 
 Now, go back to your browser and refresh....
 
- ![Filtered Feed](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Seven/Filtered Feed.png)
+ ![Filtered Feed](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Seven/Filtered%20Feed.png)
 
 We now have a filtered feed!
 
@@ -545,7 +545,7 @@ There are a few features that would be lovely to have as part of photogram at th
 
 - I'd love to have the follower and following counts shown on each profile.  How else can I tell who is popular?
 
- ![Profile Counts](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Seven/Profile Counts.png)
+ ![Profile Counts](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Seven/Profile%20Counts.png)
 
 - I'd love for my own posts to be shown on my dashboard too. How could I achieve that?
 
