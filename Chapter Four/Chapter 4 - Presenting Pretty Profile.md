@@ -14,7 +14,7 @@ Let's begin.... meow.
 
 
 
-##An Explanation of the Feature
+## An Explanation of the Feature
 
 Let's think about what a profile page is, in order to flesh out the features.  We want to have:
 
@@ -136,7 +136,7 @@ Give yourself or a nearby human a high five to celebrate.
 
 
 
-##Expressing Egos with Elegant Essays
+## Expressing Egos with Elegant Essays
 
 It's bio and profile picture time!  If you want a refresher on the features we're building here, go back up to the test section and have a quick scan.  If a profile page belongs to us, we want to be able to click an 'Edit Profile' link and there, have the ability to change our profile picture or our bio, save the info and be redirected back to our profile to be greeted with our new information.
 
@@ -252,7 +252,7 @@ Not too tricky to comprehend, right?  We have two rows for our form, where we re
 We have our form basics, let’s quickly add a few lines of css to our ```app/assets/stylesheets/application.scss``` file:
 
 ```language-scss
-#user_avatar {
+# user_avatar {
   margin: 20px auto;
 }
 ```
@@ -566,7 +566,7 @@ ___
 It’s super easy!  First, let’s take care of linking up the user names shown in comments.  Jump into your comment partial file at ```app/views/comments/_comment.html.haml```.  Adjust the dynamic user name line, so it looks like the third line shown below:
 
 ```ruby
-#comment
+# comment
   .user-name
     = link_to comment.user.user_name, profile_path(comment.user.user_name)
 ```

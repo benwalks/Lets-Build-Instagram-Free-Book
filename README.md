@@ -1,4 +1,4 @@
-#Let's Build Instagram With Ruby on Rails - Free Edition
+# Let's Build Instagram With Ruby on Rails - Free Edition
 
 
 
@@ -8,7 +8,7 @@ It's great to have you here.  The above repo is all of the markdown files & imag
 
 
 
-##Why's it here?
+## Why's it here?
 
 Well, the book isn't… perfect.  There are some typos and little errors that are rustling some jimmies.  PR's are more than welcome!
 

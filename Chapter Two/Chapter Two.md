@@ -1,4 +1,4 @@
-#Chapter 2 - Log In & Tell Me I'm Beautiful
+# Chapter 2 - Log In & Tell Me I'm Beautiful
 
 
 
@@ -1082,7 +1082,7 @@ Well, we want to re-render the comments of an individual post once our *new* com
 The comment partial is shown below.  Call it ```_comment.html.haml``` and create it in the ```views/comments``` folder.
 
 ```language-ruby
-#comment
+# comment
   .user-name
     = comment.user.user_name
   .comment-content
@@ -1218,7 +1218,7 @@ Here’s how I implemented AJAX into the deletion of comments.
 This time we’re adding it to the destroy form, not the create form (you can find the form for the destroy action in the ```_comment.html.haml``` partial view).  Check out my version below:
 
 ```language-ruby
-#comment
+# comment
   .user-name
     = comment.user.user_name
   .comment-content

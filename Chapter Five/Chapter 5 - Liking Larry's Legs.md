@@ -1,4 +1,4 @@
-#Chapter 5 - Liking Larry's Legs
+# Chapter 5 - Liking Larry's Legs
 
 
 
@@ -465,17 +465,17 @@ body {
   }
 }
 
-#image-preview {
+# image-preview {
   margin: 0 auto;
 }
 
-#post_image {
+# post_image {
   padding: 1em;
   margin: 0px auto;
 }
 
 
-#paginator {
+# paginator {
   color: #4090DB;
   height: 120px;
   width: 120px;
@@ -490,7 +490,7 @@ body {
   }
 }
 
-#load_more {
+# load_more {
   display: table-cell;
   font-size: 12px;
   padding: 0px 9px;
@@ -543,11 +543,11 @@ body {
   margin-top: 20px;
 }
 
-#user_bio {
+# user_bio {
   border: 1px solid gray;
 }
 
-#user_avatar {
+# user_avatar {
   padding: 1em;
   margin: 0px auto;
 }
@@ -577,7 +577,7 @@ Now, let’s discuss what we need to build next:
 But fear not, brave reader!  We will be solving these issues and much, much more (well, maybe not too much) now!
 
 
-##Solid Red, An Ego Fed
+## Solid Red, An Ego Fed
 
 Let’s start small, let’s make sure that the heart turns solid red upon successfully liking Larry’s legs.  In Step One of this feature, we made sure that clicking the button does in fact 'like' the post, the problem is that it doesn’t actually show it.  The 'like' action in the PostsController can return javascript thanks to this code:
 ```ruby
