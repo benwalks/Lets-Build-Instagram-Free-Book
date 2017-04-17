@@ -468,10 +468,10 @@ ___
 Create a new partial view called ```_post_dashboard.html.haml```.  Copy over all your haml from your index view into the new view.
 
 ```ruby
-# posts
+#posts
   = render 'posts'
 
-# paginator.text-center
+#paginator.text-center
   = link_to_next_page @posts, 'LOAD MORE', remote: true, id: 'load_more'
 ```
 
