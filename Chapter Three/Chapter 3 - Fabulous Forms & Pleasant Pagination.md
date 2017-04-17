@@ -285,11 +285,11 @@ I really love this, because of it's sheer simplicity.  It achieves what we want,
 Here's some extra styling you can add to your ```application.scss``` file too:
 
 ```scss
-# image-preview {
+#image-preview {
   margin: 0px auto;
 }
 
-# post_image {
+#post_image {
   padding: 1em;
   margin: 0px auto;
 }
