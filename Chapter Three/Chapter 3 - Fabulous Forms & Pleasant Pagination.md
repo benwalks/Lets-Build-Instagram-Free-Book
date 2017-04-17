@@ -460,10 +460,10 @@ ___
 Here's how I implemented this feature, manual clicking style.  First, I slightly adjusted the index view and added a new partial (for the sake of AJAX).  Here's my updated ```index.html.haml```:
 
 ```ruby
-# posts
+#posts
   = render 'posts'
 
-# paginator.text-center
+#paginator.text-center
   = link_to_next_page @posts, 'LOAD MORE', remote: true, id: 'load_more'
 ```
 
@@ -472,7 +472,7 @@ Differences?  We'll I've got a new div with the 'posts' id.  Also, instead of it
 Speaking of styling, below is the the additional lines in my ```application.scss``` file.  Just add them to the bottom of your existing code.
 
 ```scss
-# paginator {
+#paginator {
   color: #4090DB;
   height: 120px;
   width: 120px;
@@ -487,7 +487,7 @@ Speaking of styling, below is the the additional lines in my ```application.scss
   }
 }
 
-# load_more {
+#load_more {
   display: table-cell;
   font-size: 12px;
   padding: 0px 9px;
@@ -699,7 +699,7 @@ Quite simple, we simply render the ```_comment.html.haml``` partial for each com
 Now, here's the last piece of the puzzle, our unchanged ```views/comments/_comment.html.haml``` partial.
 
 ```ruby
-# comment
+#comment
   .user-name
     = comment.user.user_name
   .comment-content
