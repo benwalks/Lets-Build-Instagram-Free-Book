@@ -252,7 +252,7 @@ Not too tricky to comprehend, right?  We have two rows for our form, where we re
 We have our form basics, let’s quickly add a few lines of css to our ```app/assets/stylesheets/application.scss``` file:
 
 ```language-scss
-# user_avatar {
+#user_avatar {
   margin: 20px auto;
 }
 ```
@@ -566,7 +566,7 @@ ___
 It’s super easy!  First, let’s take care of linking up the user names shown in comments.  Jump into your comment partial file at ```app/views/comments/_comment.html.haml```.  Adjust the dynamic user name line, so it looks like the third line shown below:
 
 ```ruby
-# comment
+#comment
   .user-name
     = link_to comment.user.user_name, profile_path(comment.user.user_name)
 ```
