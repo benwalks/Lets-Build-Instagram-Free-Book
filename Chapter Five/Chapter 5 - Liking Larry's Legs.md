@@ -465,17 +465,17 @@ body {
   }
 }
 
-# image-preview {
+#image-preview {
   margin: 0 auto;
 }
 
-# post_image {
+#post_image {
   padding: 1em;
   margin: 0px auto;
 }
 
 
-# paginator {
+#paginator {
   color: #4090DB;
   height: 120px;
   width: 120px;
@@ -490,7 +490,7 @@ body {
   }
 }
 
-# load_more {
+#load_more {
   display: table-cell;
   font-size: 12px;
   padding: 0px 9px;
@@ -543,11 +543,11 @@ body {
   margin-top: 20px;
 }
 
-# user_bio {
+#user_bio {
   border: 1px solid gray;
 }
 
-# user_avatar {
+#user_avatar {
   padding: 1em;
   margin: 0px auto;
 }
