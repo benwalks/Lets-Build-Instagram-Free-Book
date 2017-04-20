@@ -17,7 +17,7 @@ Let's go forth and add some handy new features:
 
 Sound good?  Of course it does! Let’s get going.  Oh yeah, it'll look like this by the end:
 
- ![Intro Image](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Two/Intro Image.png)
+ ![Intro Image](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Two/Intro%20Image.png)
 
 
 
@@ -39,10 +39,10 @@ Checkout the [devise docs here](https://github.com/plataformatec/devise) and hav
 
 Read it all?  Great!  Install it as per their instructions.  Add gem to gemfile, run their installer and so on.  Call your Devise model ```User```.  Do your best (and don’t worry about the user name functionality just now..).
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
-We’re just warming up again for this article so let me walk you through the installation process. 
+We’re just warming up again for this article so let me walk you through the installation process.
 
 Yes, I know you could’ve done it yourself.  No, I don’t think you’re silly.
 
@@ -141,7 +141,7 @@ Run your rails server in your terminal.  Once loaded, navigate over to ```localh
 
 To get our badass usernames working, we’re going to have to add a new column in our users table and we’re also going to need to make sure our Devise forms accept 'username' as an allowed parameter.  You should google for a solution to this first, how do we add custom fields / columns to Devise?  
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 What did you find?  Did you even search?  Of course you did, I trust you unconditionally.
@@ -265,7 +265,7 @@ You.  Me. These features.  Now.
 
 
 
-#### 1. The Clever Navigation Project 
+#### 1. The Clever Navigation Project
 
 Our navbar lives here: ```app/views/layouts/application.html.haml``` for the moment.  Let’s move it into its own partial view and add some logic with regards to displaying specific information for logged in users.  This will tidy up our application view and let us separate functionality, a good thing.
 
@@ -330,7 +330,7 @@ For the moment, let’s make sure only registered (and logged in) users can acce
 
 At the top of your ```posts_controller.rb``` file add the before action.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 **Oh come on, you can do this!**
@@ -358,13 +358,13 @@ It isn’t going to happen.  Cool huh?
 
 #### 3. I want my own posts!!!
 
-Yes I’m throwing a tantrum and no I don’t care.  How can I show the world how amazing my life is via photos if people don’t know it’s MY photos they’re looking at??!?! 
+Yes I’m throwing a tantrum and no I don’t care.  How can I show the world how amazing my life is via photos if people don’t know it’s MY photos they’re looking at??!?!
 
 It’s time to personalize our posts.
 
 Let’s think about the relationship that our users will have with the posts.  You’ve dealt with relational databases before, how will this work?
 
-I think a User will have many Posts and a Post will belong to a User.  Happy with that? 
+I think a User will have many Posts and a Post will belong to a User.  Happy with that?
 
 Good.
 
@@ -384,7 +384,7 @@ This is all well and good, but we now need a way for these tables to reference e
 
 We’re going to need to generate another migration for this purpose.  You know what?  I think you should try to do it first.  Generate a migration file that’ll add a user id to the posts table.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Solution time!  In your terminal, run the following:
@@ -421,7 +421,7 @@ Let’s fix this now and stop tricking our friends by incorporating the current 
 
 Want to be awesome and give it a go yourself?  Go ahead!  Maybe commit your changes to git first though.  Just in case...
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Adjust the code within the post controllers’ ```new``` and ```create``` actions.
@@ -460,7 +460,7 @@ Try it yourself.
 
 Replace "Ben Walker" (great name) in each post with the user name of the user who posted it!  You’ll have to chain together a few methods to achieve this, just try to think about the relationship of the post to the user and the user\_id to the user.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -491,7 +491,7 @@ ___
 
 Check this out!
 
- ![photogram_username](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Two/photogram_username.png)
+ ![photogram_username](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Two/photogram_username.png)
 
 
 
@@ -509,7 +509,7 @@ First, let’s adjust the logic in our views so that the edit and delete links a
 
 In the ```show``` view, create an if / else statement that compares the user id of the creator of the post to the user id of the current user.  If they match, show the 'Edit Post' link, otherwise, just show the cancel link.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Did you have a win?  Here’s how I implemented this feature:
@@ -536,7 +536,7 @@ Great, that 'Edit Post' button is missing!  But wait, what if we just navigate t
 
 We can edit and delete other people’s posts!  Have a think about how you could ensure that only the owner of the post can access that edit and delete action.  Try to implement it now.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Here’s how I solved this problem.  First, I created a private method in the posts controller below the other two private methods.  It looks like this:
@@ -550,7 +550,7 @@ def owned_post
 end
 ```
 
-Then I inserted a before\_action at the top of the controller, specifying the owned\_post method for  the edit, update and destroy actions only. 
+Then I inserted a before\_action at the top of the controller, specifying the owned\_post method for  the edit, update and destroy actions only.
 
 ```language-ruby
 before_action :owned_post, only: [:edit, :update, :destroy]
@@ -561,12 +561,12 @@ ___
 
 
 
- ![my_post](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Two/my_post.png)
+ ![my_post](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Two/my_post.png)
 
 
 My post.
 
-![not_my_post](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Two/not_my_post.png)
+![not_my_post](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Two/not_my_post.png)
 
 
 Not my post.
@@ -601,7 +601,7 @@ First, let’s generate a model for the comments.  In your terminal, generate a 
 
 Not sure about 'references'?  What a great time to perform some self-driven research!
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 **Need help hombre?**
@@ -638,7 +638,7 @@ Now that our model / database table / associates are sorted, let’s add our com
 
 You can read more about Rails routing [here](http://guides.rubyonrails.org/routing.html) if you want to add the nested route yourself or simply read how it works.  Once you’ve had a read, go ahead and add the nested route in your routes.rb file!
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -657,7 +657,7 @@ Now we need a controller and a form.  First, the controller!
 
 Generate a new controller for the comments in your terminal now.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 In your terminal, type:
@@ -677,7 +677,7 @@ Now that we have an empty controller, it’s time to add the actions that we wan
 
 Have a think about this will work and then try to implement the feature yourself.  I believe in you.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Well, here’s how my create action looks (as well as a bit more of the controller), it’s probably not as good as yours to be honest, you did a fantastic job just now.
@@ -712,13 +712,13 @@ ___
 
 
 
-Make sense?  At the very top we run the ```set_post``` ```before_action``` which we can see at the bottom of the snippet in the private method area.  We’re just setting the ```@post``` instance variable to the post from the Post model based on the post\_id params. 
+Make sense?  At the very top we run the ```set_post``` ```before_action``` which we can see at the bottom of the snippet in the private method area.  We’re just setting the ```@post``` instance variable to the post from the Post model based on the post\_id params.
 
 Looking at the create action itself, it should be reasonably self-explanatory.  We build the new ```@comment``` object and then assign it the user_name field based on the user currently logged in.  If the comment is saved, we get a lovely message and are redirected back.  If not, we get sad.
 
 While we’re at it, let’s add a destroy method to our comments controller.  Implement it now if you dare.  You’ve done this before after all!
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 Below my create action, I have the following:
@@ -741,7 +741,7 @@ So we’ve got a model, we’ve set up our routing appropriately and we have our
 
 Do you want to attack your own views and create this functionality?  I’ll be honest, it was a bit tricky but hey, learning new things isn’t meant to be easy!  Give it a go.  Add a form to add a comment below the caption area of each post in your index.
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 My solution is below!  Please note I’ve allowed a spot here to actually show the comments for each post too.  I’m pretty sneaky like that.
@@ -788,7 +788,7 @@ While I think we’re making great progress, something is wrong...  the app is j
 
 This is how each post will look after this small makeover:
 
-![beautiful_post](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Two/beautiful_post.png)
+![beautiful_post](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Two/beautiful_post.png)
 
 
 
@@ -1030,7 +1030,7 @@ You’ve heard of AJAX right?  It’s a bleach cleaner that does wonders for you
 
 The other AJAX that I care about for the sake of our comments is described thusly on [w3schools.com](www.w3schools.com/ajax):
 
-> AJAX is the art of exchanging data with a server, and updating parts of a web page - without reloading the whole page. 
+> AJAX is the art of exchanging data with a server, and updating parts of a web page - without reloading the whole page.
 
 This sounds perfect!  Let’s make this happen.
 
@@ -1065,7 +1065,7 @@ Let’s add the AJAX functionality for only our create action for the moment.  I
 
 Remember to commit your git changes first in case you need to revert during your adventure (no offense).
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -1207,7 +1207,7 @@ Try to do the same now for the deletion of comments.  Remember, the process itse
 2. Make sure the destroy action in the controller will return javascript when requested.  
 3. Last but not least, manipulate the DOM via jQuery. You’ll probably want to render the comments again, just like we did for the create action!
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -1271,7 +1271,7 @@ Try it now!  Beautiful, right?  You click the 'x', you get the prompt, you accep
 Comment deleted.
 
 
-### 
+###
 
 
 ## Tidying Up
@@ -1288,7 +1288,7 @@ No hints here, validations should be easy as pie for a developer of your calibre
 
 You know the one!  It’s the bit on the top right hand corner that says that your last selfie was posted 44m ago!  Rails makes this *super* easy to implement.
 
-As per usual, try it yourself, you’re awesome and can do it.   If you’re feeling lazy due to the time of day though, pilfer my code below.  I won’t be angry... 
+As per usual, try it yourself, you’re awesome and can do it.   If you’re feeling lazy due to the time of day though, pilfer my code below.  I won’t be angry...
 
 **just disappointed.**
 

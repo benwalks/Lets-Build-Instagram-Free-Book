@@ -2,9 +2,9 @@
 
 
 
-Larry has a spectacular set of pins, check them out: 
+Larry has a spectacular set of pins, check them out:
 
- ![Larrys Legs](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Five/Larrys Legs.png)
+ ![Larrys Legs](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Five/Larrys%20Legs.png)
 
 Larry needs a feature on his favorite social network (Photogram) where he can accumulate likes for his posts, so he can bask in the glory of sharing his lovely legs with the world. And in this Rails tutorial, we’re going to give it to him.
 
@@ -38,7 +38,7 @@ Try to patch together what you learnt in the previous tutorials.  How do we tell
 
 Also, check out the ```acts_as_votable``` documents [here](https://github.com/ryanto/acts_as_votable).  They should cover just about everything you could possibly want.
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -562,7 +562,7 @@ All I’ve done is added some styling for the 'likes' class and also tweaked how
 
 Refresh your browser once more and it should look a little nicer.
 
- ![A bit nicer](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Five/A bit nicer.png)
+ ![A bit nicer](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Five/A%20bit%20nicer.png)
 
 
 
@@ -644,7 +644,7 @@ This is explained in the [acts\_as\_votable docs](https://github.com/ryanto/acts
 
  So, refresh your dashboard now and you should be greeted with some nice, solid (albeit *blue*) hearts.
 
- ![Solid Blue Likes](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Five/Solid Blue Likes.png)
+ ![Solid Blue Likes](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Five/Solid%20Blue%20Likes.png)
 
 
 
@@ -658,11 +658,11 @@ As mentioned earlier in the article, Instagram displays their like counts in two
 
 When there’s only a few likes, list all the names under the image:
 
- ![A Few Likes](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Five/A Few Likes.png)
+ ![A Few Likes](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Five/A%20Few%20Likes.png)
 
 When there’s lots of likes, just list the like count:
 
- ![Lots of Likes](/Users/ben/Desktop/Lets Build Instagram Free Book/Chapter Five/Lots of Likes.png)
+ ![Lots of Likes](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/Chapter%20Five/Lots%20of%20Likes.png)
 
 
 
@@ -676,7 +676,7 @@ First, let’s display a like count for a post if it has more than 8 separate li
 
 Instagram will make that like count a clickable list of likers but we’re not too worried about that for the sake of this tutorial (at this stage).
 
-![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 ___
 
@@ -830,4 +830,3 @@ Instagram itself uses ReactJS for the front-end, so why bother using rails and j
 Because it’s great to see what can be done with Rails itself and it helps piece together the Rails puzzle.  The javascript in the series so far hasn’t been *too* awful and messy so for a project of this scope, so in the grand scheme of  things it’s probably fine.
 
 Until next chapter my friend, stay frosty and know that you're awesome.
-

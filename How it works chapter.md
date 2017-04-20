@@ -10,7 +10,7 @@ So please, embrace the struggle.
 
 Every so often, you're going to see this goat:
 
- ![YourTurnGoat](/Users/ben/Desktop/Lets Build Instagram Free Book/YourTurnGoat.png)
+ ![YourTurnGoat](https://raw.githubusercontent.com/benwalks/Lets-Build-Instagram-Free-Book/master/YourTurnGoat.png)
 
 And for that, I apologise (it seemed like a good idea at the time).  The point of this goat should be clear.  You do your **absolute** best to complete the task I've set you.
 
