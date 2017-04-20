@@ -1,4 +1,4 @@
-#Chapter 3 - Fabulous Forms & Pleasant Pagination
+# Chapter 3 - Fabulous Forms & Pleasant Pagination
 
 
 
@@ -49,7 +49,7 @@ How great do those forms look now? It's ok, you don't have to tell me, they look
 
 
 
-##Sign Me Up to This Glorious Looking Site
+## Sign Me Up to This Glorious Looking Site
 
 Let's first attack our registration form, it is the form our users will see first after all.  To begin, let's make some simple styling choices and implement them with our bootstrap divs and some simple CSS.
 
@@ -168,7 +168,7 @@ Open the registration form now in your browser and submit some crappy informatio
 
 
 
-##Logging in should feel like a win
+## Logging in should feel like a win
 
 You've already built one beautiful form, go ahead and try to build this one now.  Use the exact same principles and heck, the same divs and css.  let's not be wasteful here.  Here's the new and improved login form again for reference:
 
@@ -224,7 +224,7 @@ Look good?  You bet your ass it does.  Now, onto...
 
 
 
-##Pretty Post Posting & Previews
+## Pretty Post Posting & Previews
 
 Our old form looks a bit yuck and we don't get to preview our images either!  It's just not right.  let's shake things up a bit so our form actually looks OK, and we can have a quick glimpse at our image before we post, just in case we were to accidentally upload a picture of our glutes again...
 

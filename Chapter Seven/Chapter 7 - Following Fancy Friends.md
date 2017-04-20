@@ -1,4 +1,4 @@
-#Chapter 7 - Following Fancy Friends
+# Chapter 7 - Following Fancy Friends
 
 
 

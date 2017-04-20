@@ -1,4 +1,4 @@
-#Chapter 2 - Log In & Tell Me I'm Beautiful
+# Chapter 2 - Log In & Tell Me I'm Beautiful
 
 
 

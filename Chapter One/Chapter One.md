@@ -1,4 +1,4 @@
-#Chapter One - Just CRUD Things
+# Chapter One - Just CRUD Things
 
 
 
@@ -61,7 +61,7 @@ You should see this screen as a friendly reminder that you’re awesome:
 
 You are by the way ;)
 
-###Back to the build, you fiend!
+### Back to the build, you fiend!
  Let’s start building our application.  Remember, the TDD version of this free book is coming and I don't want you to risk being too incredible just now.  That and I want you to have a great foundation from which to learn to test.
 
 Let's be cowboy devs for the moment.
@@ -147,7 +147,7 @@ We’ll get back to actually having something of value in our index but for the 
 
 
 
-###First, a database!
+### First, a database!
 
 We’re going to need to generate a model in terminal to store our posts, including caption and image.  Let’s create the model “post” with only a string column for “caption”.  We’ll add the image functionality in a moment.
 
@@ -239,7 +239,7 @@ We can now officially handle image uploads! Give yourself a high ten and forge o
 
 
 
-###Out with the old in with the new action
+### Out with the old in with the new action
 
 Create a new empty action in your ```posts_controller.rb``` file called ‘new’, exactly the same as you did earlier with the index action.  
 
@@ -435,7 +435,7 @@ What an incredible achievement.  It’s not super functional yet though, I can�
 
 Being able to show individual posts would be nice too but that can all wait because I’m sick of this thing looking awful.
 
-###Styling: Let’s steal like an artist or something
+### Styling: Let’s steal like an artist or something
 
  Let’s blatantly steal from Instagram, for this is an Instagram clone tutorial after all!  
 
@@ -626,7 +626,7 @@ Let’s keep building the apps functionality now.
 
 
 
-###Show me a single post you silly application!
+### Show me a single post you silly application!
 
 Hey, you talk to Photogram nicely please.
 
@@ -692,7 +692,7 @@ Now you should have the ability to click one of your posts on the index and it s
 
 
 
-###Let me edit my posts, I’ve made a horrible mistake
+### Let me edit my posts, I’ve made a horrible mistake
 
 We all make mistakes but at least we can fix this one for you.  Take a moment and have a think about what we’re going to need to do to implement this.  In fact, you’ve probably done this before in your previous applications!
 
@@ -824,7 +824,7 @@ And it’s done!  Try deleting one of your pics now and see what happens.
 
 
 
-##Tidy, tidy, tidy
+## Tidy, tidy, tidy
 
 Basic functionality has been created, let’s clean up a little before we finish for the moment.
 
@@ -990,7 +990,7 @@ flash[:alert] = “Oh god something is wrong”
 
 
 
-###CRUD Complete
+### CRUD Complete
 
 You have now created a great CRUD application that looks pretty snazzy, but we’re still missing a few things I’d like to see.  Users with authentication, comments and likes to be specific.  Maybe even a profile page for each user.
 

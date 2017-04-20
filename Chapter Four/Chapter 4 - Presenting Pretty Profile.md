@@ -14,7 +14,7 @@ Let's begin.... meow.
 
 
 
-##An Explanation of the Feature
+## An Explanation of the Feature
 
 Let's think about what a profile page is, in order to flesh out the features.  We want to have:
 
@@ -136,7 +136,7 @@ Give yourself or a nearby human a high five to celebrate.
 
 
 
-##Expressing Egos with Elegant Essays
+## Expressing Egos with Elegant Essays
 
 It's bio and profile picture time!  If you want a refresher on the features we're building here, go back up to the test section and have a quick scan.  If a profile page belongs to us, we want to be able to click an 'Edit Profile' link and there, have the ability to change our profile picture or our bio, save the info and be redirected back to our profile to be greeted with our new information.
 
